@@ -1,0 +1,22 @@
+*,
+*::before,
+*::after {outline:none; box-sizing:border-box}
+
+html {min-width:320px}
+
+body {min-width:320px; margin:0; padding:0; font:18px/25px ProximaNova, sans-serif; color:#222426; background:#fff; -webkit-text-size-adjust:100%; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; overflow-anchor:none}
+
+a {color:#3368c3; text-decoration:none; transition:color 0.2s}
+a:hover {color:#34548b; text-decoration:none}
+
+img {border:none; max-width:100%; height:auto}
+iframe {border:none; max-width:100%}
+
+::-ms-clear {display:none}
+
+strong, b {font-weight:600}
+
+.container {max-width:1136px; margin:0 auto; padding:0 8px}
+.container::after {content:""; display:block; clear:both}
+
+.wrapper {width:100%; min-width:320px; position:relative; overflow:hidden}
