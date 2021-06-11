@@ -20,3 +20,40 @@ strong, b {font-weight:600}
 .container::after {content:""; display:block; clear:both}
 
 .wrapper {width:100%; min-width:320px; position:relative; overflow:hidden}
+
+footer {margin:76px 0 0 0; background:#18c6cd; color:#fff}
+footer a {color:#fff; text-decoration:none}
+footer a:hover {color:#fff}
+
+.footer-disclamer {padding:10px 0 0 0; font:24px/28px RobotoCondensed, sans-serif; letter-spacing:0.08em; text-transform:uppercase}
+
+.footer-container {margin:15px 0 0 0; border-top:1px solid rgba(255, 255, 255, 0.3); padding:51px 0 0 0}
+
+.footer-content {float:left}
+.footer-logo {width:209px; height:51px; background:url(../images/logo.svg) no-repeat; background-size:100% 100%}
+.footer-contacts {margin:27px 0 0 0}
+.footer-contacts::before {content:""; display:block; width:297px; height:1px; background:rgba(255, 255, 255, 0.5)}
+.footer-address {margin:24px 0 0 0; font-weight:600; font-size:15px; line-height:18px; letter-spacing:0.01em}
+.footer-email {margin:13px 0 0 0; font-weight:600; font-size:15px; line-height:18px; letter-spacing:0.01em}
+.footer-feedback {margin:14px 0 0 0; font-weight:600; font-size:15px; line-height:18px; letter-spacing:0.01em}
+.footer-feedback a {text-decoration:underline}
+.footer-phone-title {margin:50px 0 0 0; font-size:15px; line-height:18px; letter-spacing:0.01em}
+.footer-phone {margin:1px 0 0 0; font-weight:600; font-size:45px; line-height:52px}
+
+.footer-menu {float:right; margin:7px 0 0 0}
+.footer-menu-block {float:left; margin:0 0 0 58px}
+.footer-menu-block:first-child {margin:0}
+.footer-menu-title {font-weight:600; font-size:22px; line-height:26px}
+.footer-menu-list {margin:18px 0 0 0; font-weight:600; font-size:15px; line-height:18px; letter-spacing:0.01em}
+.footer-menu-list ul {margin:0; padding:0; list-style:none}
+.footer-menu-list ul li {margin:14px 0 0 0; padding:0}
+.footer-menu-list ul li::before {display:none}
+
+.footer-bottom {margin:63px 0 0 0; border-top:1px solid rgba(255, 255, 255, 0.5); padding:23px 0 30px 0}
+.footer-social {float:left; width:100%; text-align:center; font-size:0; line-height:0; letter-spacing:-1px; padding:0 0 0 250px}
+.footer-social a {display:inline-block; vertical-align:top; width:48px; height:48px; margin:0 0 0 24px}
+.footer-social a:first-child {margin:0}
+.footer-social a svg {display:block; width:48px; height:48px; fill:#fff}
+.footer-copyrights {float:left; margin:17px 0 0 -100%; font-size:15px; line-height:18px; letter-spacing:0.01em}
+.footer-copyrights a {margin:0 0 0 32px}
+.footer-developer {float:left; margin:17px 0 0 -220px; width:220px; text-align:right; font-size:15px; line-height:18px; letter-spacing:0.01em}
