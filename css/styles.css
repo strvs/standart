@@ -6,8 +6,8 @@ html {min-width:320px}
 
 body {min-width:320px; margin:0; padding:0; font:18px/25px ProximaNova, sans-serif; color:#222426; background:#fff; -webkit-text-size-adjust:100%; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; overflow-anchor:none}
 
-a {color:#3368c3; text-decoration:none; transition:color 0.2s}
-a:hover {color:#34548b; text-decoration:none}
+a {color:#828ba9; text-decoration:none; transition:color 0.2s}
+a:hover {color:#18c6cd; text-decoration:none}
 
 img {border:none; max-width:100%; height:auto}
 iframe {border:none; max-width:100%}
@@ -16,14 +16,154 @@ iframe {border:none; max-width:100%}
 
 strong, b {font-weight:600}
 
-.container {max-width:1136px; margin:0 auto; padding:0 8px}
+.container {max-width:1200px; margin:0 auto; padding:0 40px}
 .container::after {content:""; display:block; clear:both}
 
 .wrapper {width:100%; min-width:320px; position:relative; overflow:hidden}
 
+.main-digits {margin:72px 0 0 0; display:table; width:100%}
+.main-digits-left {display:table-cell; vertical-align:top; width:50%; padding:2px 73px 12px 0}
+.main-digits-left-value {font-weight:600; font-size:64px; line-height:70px; color:#18c6cd}
+.main-digits-left-text {margin:6px 0 0 0; font-size:24px; line-height:34px; letter-spacing:0.01em}
+.main-digits-right {display:table-cell; vertical-align:top; width:25%; padding:18px 40px 10px 20px; border-left:1px solid #bfc3d3}
+.main-digits-right:last-child {padding-right:0}
+.main-digits-right-value {font-weight:600; font-size:45px; line-height:52px}
+.main-digits-right-value span {font-size:18px; line-height:25px; margin:0 0 0 9px}
+.main-digits-right-text {margin:12px 0 0 0}
+
+.main-services {margin:121px 0 0 0; position:relative; border-top:1px solid rgba(191, 195, 211, 0.64)}
+.main-services-title {position:absolute; left:0; top:-10px; background:#fff; padding:0 20px 0 0; font-weight:600; font-size:14px; line-height:20px; color:#828ba9; text-transform:uppercase; letter-spacing:0.205em}
+.main-services-list {margin:8px -16px 0 -16px; font-size:0; line-height:0; letter-spacing:-1px}
+.main-services-item {display:inline-block; vertical-align:top; width:25%; padding:32px 16px 0 16px}
+.main-services-item a {display:block; width:256px; margin:0 auto; height:248px; background:#ebf0f2; border-radius:16px; position:relative; text-decoration:none; color:#222426; overflow:hidden}
+.main-services-item a:hover {color:#18c6cd}
+.main-services-item-eye {position:absolute; left:0; bottom:0; right:0; height:88px; background:url(../images/main-services-eye.png) no-repeat center bottom}
+.main-services-item-title {position:absolute; left:20px; top:16px; right:67px; font-weight:600; font-size:22px; line-height:26px; letter-spacing:0}
+
+.main-services-item-inverse a {background:#18c6cd; color:#fff}
+.main-services-item-inverse a:hover {color:#fff}
+.main-services-item-inverse .main-services-item-eye {-webkit-filter:grayscale(100%); -moz-filter:grayscale(100%); -ms-filter:grayscale(100%); -o-filter:grayscale(100%); filter:grayscale(100%); filter:gray; transition:all 0.2s}
+.main-services-item-inverse a:hover .main-services-item-eye {-webkit-filter:none; -moz-filter:none; -ms-filter:none; -o-filter:none; filter:none}
+
+.main-services-item-black a {background:#222426; color:#fff}
+.main-services-item-black a:hover {color:#fff}
+.main-services-item-black .main-services-item-eye {height:91px; background-image:url(../images/main-services-eye-black.png)}
+.main-services-item-black a::before {content:""; display:block; position:absolute; left:0; right:0; top:83px; height:283px; background:url(../images/main-services-eye-black-shadow.png) no-repeat center; transform:scale(0); transition:all 0.2s}
+.main-services-item-black a:hover::before {transform:scale(1)}
+
+.main-services-item-1-text {display:block; position:absolute; width:102px; height:85px; left:50%; bottom:-20px; margin-left:-51px; background:url(../images/main-services-1-text.svg) no-repeat; background-size:100% 100%; transition:all 0.2s; transform-origin:center bottom}
+.main-services-item a:hover .main-services-item-1-text {transform:scale(0.8529); bottom:-13px}
+.main-services-item-1-circle {display:block; position:absolute; width:228px; height:228px; left:50%; bottom:-130px; margin-left:-114px; border:2px solid #18c6cd; border-radius:50%; transition:all 0.2s}
+.main-services-item a:hover .main-services-item-1-circle {width:238px; height:238px; margin-left:-119px}
+
+.main-services-item-2-arrow-1 {display:block; position:absolute; width:18px; height:50px; left:50%; bottom:37px; margin-left:-9px; background:url(../images/main-services-2-arrow.svg) no-repeat; background-size:100% 100%; transition:all 0.2s}
+.main-services-item a:hover .main-services-item-2-arrow-1 {bottom:33px}
+.main-services-item-2-arrow-2 {display:block; position:absolute; width:18px; height:50px; left:50%; bottom:29px; margin-left:23px; background:url(../images/main-services-2-arrow.svg) no-repeat; background-size:100% 100%; transform:rotate(22deg); transition:all 0.2s}
+.main-services-item a:hover .main-services-item-2-arrow-2 {margin-left:20px; bottom:26px}
+.main-services-item-2-arrow-3 {display:block; position:absolute; width:18px; height:50px; left:50%; bottom:30px; margin-left:-38px; background:url(../images/main-services-2-arrow.svg) no-repeat; background-size:100% 100%; transform:rotate(-22deg); transition:all 0.2s}
+.main-services-item a:hover .main-services-item-2-arrow-3 {margin-left:-39px; bottom:25px}
+.main-services-item-2-arrow-4 {display:block; position:absolute; width:18px; height:50px; left:50%; bottom:11px; margin-left:47px; background:url(../images/main-services-2-arrow.svg) no-repeat; background-size:100% 100%; transform:rotate(45deg); transition:all 0.2s}
+.main-services-item a:hover .main-services-item-2-arrow-4 {margin-left:44px; bottom:8px}
+.main-services-item-2-arrow-5 {display:block; position:absolute; width:18px; height:50px; left:50%; bottom:12px; margin-left:-65px; background:url(../images/main-services-2-arrow.svg) no-repeat; background-size:100% 100%; transform:rotate(-45deg); transition:all 0.2s}
+.main-services-item a:hover .main-services-item-2-arrow-5 {margin-left:-63px; bottom:8px}
+.main-services-item-2-arrow-6 {display:block; position:absolute; width:18px; height:50px; left:50%; bottom:-11px; margin-left:61px; background:url(../images/main-services-2-arrow.svg) no-repeat; background-size:100% 100%; transform:rotate(70deg); transition:all 0.2s}
+.main-services-item a:hover .main-services-item-2-arrow-6 {margin-left:58px; bottom:-14px}
+.main-services-item-2-arrow-7 {display:block; position:absolute; width:18px; height:50px; left:50%; bottom:-9px; margin-left:-79px; background:url(../images/main-services-2-arrow.svg) no-repeat; background-size:100% 100%; transform:rotate(-70deg); transition:all 0.2s}
+.main-services-item a:hover .main-services-item-2-arrow-7 {margin-left:-75px; bottom:-12px}
+.main-services-item-2-dot-1 {display:block; position:absolute; width:4px; height:4px; left:50%; bottom:106px; margin-left:-2px; background:#18c6cd; border-radius:50%; transition:all 0.2s}
+.main-services-item a:hover .main-services-item-2-dot-1 {bottom:114px}
+.main-services-item-2-dot-2 {display:block; position:absolute; width:4px; height:4px; left:50%; bottom:94px; margin-left:46px; background:#18c6cd; border-radius:50%; transition:all 0.2s}
+.main-services-item a:hover .main-services-item-2-dot-2 {bottom:101px; margin-left:52px}
+.main-services-item-2-dot-3 {display:block; position:absolute; width:4px; height:4px; left:50%; bottom:94px; margin-left:-50px; background:#18c6cd; border-radius:50%; transition:all 0.2s}
+.main-services-item a:hover .main-services-item-2-dot-3 {bottom:101px; margin-left:-54px}
+.main-services-item-2-dot-4 {display:block; position:absolute; width:4px; height:4px; left:50%; bottom:67px; margin-left:86px; background:#18c6cd; border-radius:50%; transition:all 0.2s}
+.main-services-item a:hover .main-services-item-2-dot-4 {bottom:72px; margin-left:93px}
+.main-services-item-2-dot-5 {display:block; position:absolute; width:4px; height:4px; left:50%; bottom:67px; margin-left:-91px; background:#18c6cd; border-radius:50%; transition:all 0.2s}
+.main-services-item a:hover .main-services-item-2-dot-5 {bottom:72px; margin-left:-100px}
+.main-services-item-2-dot-6 {display:block; position:absolute; width:4px; height:4px; left:50%; bottom:27px; margin-left:110px; background:#18c6cd; border-radius:50%; transition:all 0.2s}
+.main-services-item a:hover .main-services-item-2-dot-6 {bottom:29px; margin-left:113px}
+.main-services-item-2-dot-7 {display:block; position:absolute; width:4px; height:4px; left:50%; bottom:27px; margin-left:-115px; background:#18c6cd; border-radius:50%; transition:all 0.2s}
+.main-services-item a:hover .main-services-item-2-dot-7 {bottom:29px; margin-left:-119px}
+
+.main-services-item-3-lines {position:absolute; left:0; bottom:0; width:244px; height:133px; background:url(../images/main-services-3-lines.svg) no-repeat}
+.main-services-item-3-lines-front {position:absolute; left:0; bottom:0; width:244px; height:133px; background:url(../images/main-services-3-lines-front.svg) no-repeat}
+.main-services-item-3-cross-1 {position:absolute; left:28px; bottom:60px; width:19px; height:19px; background:url(../images/main-services-3-cross-1.svg) no-repeat; transition:all 0.2s}
+.main-services-item a:hover .main-services-item-3-cross-1 {left:28px; bottom:48px}
+.main-services-item-3-cross-2 {position:absolute; left:78px; bottom:88px; width:22px; height:22px; background:url(../images/main-services-3-cross-2.svg) no-repeat; transition:all 0.2s}
+.main-services-item a:hover .main-services-item-3-cross-2 {left:54px; bottom:90px}
+.main-services-item-3-cross-3 {position:absolute; left:121px; bottom:105px; width:21px; height:21px; background:url(../images/main-services-3-cross-3.svg) no-repeat; transition:all 0.2s}
+.main-services-item a:hover .main-services-item-3-cross-3 {left:132px; bottom:97px}
+.main-services-item-3-cross-4 {position:absolute; left:209px; bottom:53px; width:21px; height:21px; background:url(../images/main-services-3-cross-4.svg) no-repeat; transition:all 0.2s}
+.main-services-item a:hover .main-services-item-3-cross-4 {left:216px; bottom:46px}
+.main-services-item-3-cross-5 {position:absolute; left:70px; bottom:35px; width:19px; height:19px; background:url(../images/main-services-3-cross-5.svg) no-repeat; transition:all 0.2s}
+.main-services-item a:hover .main-services-item-3-cross-5 {left:80px; bottom:40px}
+.main-services-item-3-cross-6 {position:absolute; left:112px; bottom:51px; width:21px; height:21px; background:url(../images/main-services-3-cross-6.svg) no-repeat; transition:all 0.2s}
+.main-services-item a:hover .main-services-item-3-cross-6 {left:126px; bottom:55px}
+.main-services-item-3-cross-7 {position:absolute; left:165px; bottom:29px; width:20px; height:21px; background:url(../images/main-services-3-cross-7.svg) no-repeat; transition:all 0.2s}
+.main-services-item a:hover .main-services-item-3-cross-7 {left:165px; bottom:21px}
+
+.main-services-item-4-circle-1 {display:block; position:absolute; width:203px; height:207px; left:9px; bottom:-127px; background:url(../images/main-services-4-circle-1.svg) no-repeat; transition:all 0.2s}
+.main-services-item a:hover .main-services-item-4-circle-1 {left:15px; bottom:-125px}
+.main-services-item-4-circle-2 {display:block; position:absolute; width:221px; height:218px; left:25px; bottom:-123px; background:url(../images/main-services-4-circle-2.svg) no-repeat; transition:all 0.2s}
+.main-services-item a:hover .main-services-item-4-circle-2 {left:23px; bottom:-115px}
+
+.main-services-item-5-lines {position:absolute; left:50%; bottom:0; width:198px; height:87px; margin-left:-99px; border-radius:99px 99px 0 0; overflow:hidden}
+.main-services-item-5-line-01 {position:absolute; left:13px; top:0; width:2px; height:87px; background:#ebf0f2; transition:all 0.2s}
+.main-services-item a:hover .main-services-item-5-line-01 {left:11px}
+.main-services-item-5-line-02 {position:absolute; left:29px; top:0; width:2px; height:87px; background:#ebf0f2; transition:all 0.2s}
+.main-services-item a:hover .main-services-item-5-line-02 {left:23px}
+.main-services-item-5-line-03 {position:absolute; left:45px; top:0; width:2px; height:87px; background:#ebf0f2; transition:all 0.2s}
+.main-services-item a:hover .main-services-item-5-line-03 {left:37px}
+.main-services-item-5-line-04 {position:absolute; left:61px; top:0; width:2px; height:87px; background:#ebf0f2; transition:all 0.2s}
+.main-services-item a:hover .main-services-item-5-line-04 {left:51px}
+.main-services-item-5-line-05 {position:absolute; left:77px; top:0; width:2px; height:87px; background:#ebf0f2; transition:all 0.2s}
+.main-services-item a:hover .main-services-item-5-line-05 {left:65px}
+.main-services-item-5-line-06 {position:absolute; left:93px; top:0; width:2px; height:87px; background:#ebf0f2; transition:all 0.2s}
+.main-services-item a:hover .main-services-item-5-line-06 {left:79px}
+.main-services-item-5-line-07 {position:absolute; left:109px; top:0; width:2px; height:87px; background:#ebf0f2; transition:all 0.2s}
+.main-services-item a:hover .main-services-item-5-line-07 {left:93px}
+.main-services-item-5-line-08 {position:absolute; left:125px; top:0; width:2px; height:87px; background:#ebf0f2; transition:all 0.2s}
+.main-services-item a:hover .main-services-item-5-line-08 {left:107px}
+.main-services-item-5-line-09 {position:absolute; left:141px; top:0; width:2px; height:87px; background:#ebf0f2; transition:all 0.2s}
+.main-services-item a:hover .main-services-item-5-line-09 {left:121px}
+.main-services-item-5-line-10 {position:absolute; left:157px; top:0; width:2px; height:87px; background:#ebf0f2; transition:all 0.2s}
+.main-services-item a:hover .main-services-item-5-line-10 {left:135px}
+.main-services-item-5-line-11 {position:absolute; left:173px; top:0; width:2px; height:87px; background:#ebf0f2; transition:all 0.2s}
+.main-services-item a:hover .main-services-item-5-line-11 {left:149px}
+.main-services-item-5-line-12 {position:absolute; left:189px; top:0; width:2px; height:87px; background:#ebf0f2; transition:all 0.2s}
+.main-services-item a:hover .main-services-item-5-line-12 {left:163px}
+.main-services-item-5-line-13 {position:absolute; left:198px; top:0; width:2px; height:87px; background:#ebf0f2; transition:all 0.2s}
+.main-services-item a:hover .main-services-item-5-line-13 {left:176px}
+.main-services-item-5-line-14 {position:absolute; left:198px; top:0; width:2px; height:87px; background:#ebf0f2; transition:all 0.2s}
+.main-services-item a:hover .main-services-item-5-line-14 {left:188px}
+.main-services-item-5-line-15 {position:absolute; left:0; top:70px; width:198px; height:2px; background:#ebf0f2; transition:all 0.2s}
+.main-services-item a:hover .main-services-item-5-line-15 {top:70px}
+.main-services-item-5-line-16 {position:absolute; left:0; top:54px; width:198px; height:2px; background:#ebf0f2; transition:all 0.2s}
+.main-services-item a:hover .main-services-item-5-line-16 {top:54px}
+.main-services-item-5-line-17 {position:absolute; left:0; top:38px; width:198px; height:2px; background:#ebf0f2; transition:all 0.2s}
+.main-services-item a:hover .main-services-item-5-line-17 {top:38px}
+.main-services-item-5-line-18 {position:absolute; left:0; top:20px; width:198px; height:2px; background:#ebf0f2; transition:all 0.2s}
+.main-services-item a:hover .main-services-item-5-line-18 {top:20px}
+.main-services-item-5-line-19 {position:absolute; left:0; top:-2px; width:198px; height:2px; background:#ebf0f2; transition:all 0.2s}
+.main-services-item a:hover .main-services-item-5-line-19 {top:5px}
+.main-services-item-5-line-20 {position:absolute; left:0; top:87px; width:198px; height:2px; background:#ebf0f2; transition:all 0.2s}
+.main-services-item a:hover .main-services-item-5-line-20 {top:86px}
+
+.main-services-item-6-lines {position:absolute; width:91px; height:31px; background:url(../images/main-services-6-lines.svg) no-repeat; position:absolute; left:50%; bottom:92px; margin-left:-45.5px; transition:all 0.2s}
+.main-services-item a:hover .main-services-item-6-lines {bottom:85px}
+
+.main-services-item-7-circle-1 {display:block; position:absolute; width:35px; height:35px; left:55px; bottom:52px; background:url(../images/main-services-7-circle-1.svg) no-repeat; background-size:100% 100%; transition:all 0.2s}
+.main-services-item a:hover .main-services-item-7-circle-1 {left:58px; bottom:53px; width:32px; height:32px}
+.main-services-item-7-circle-2 {display:block; position:absolute; width:34px; height:34px; left:168px; bottom:54px; background:url(../images/main-services-7-circle-2.svg) no-repeat; background-size:100% 100%; transition:all 0.2s}
+.main-services-item a:hover .main-services-item-7-circle-2 {left:168px; bottom:53px; width:32px; height:32px}
+.main-services-item-7-circle-3 {display:block; position:absolute; width:71px; height:72px; left:38px; bottom:33px; background:url(../images/main-services-7-circle-3.svg) no-repeat; background-size:100% 100%; transition:all 0.2s}
+.main-services-item a:hover .main-services-item-7-circle-3 {left:36px; bottom:31px; width:75px; height:76px}
+.main-services-item-7-circle-4 {display:block; position:absolute; width:71px; height:72px; left:148px; bottom:33px; background:url(../images/main-services-7-circle-4.svg) no-repeat; background-size:100% 100%; transition:all 0.2s}
+.main-services-item a:hover .main-services-item-7-circle-4 {left:146px; bottom:30px; width:75px; height:77px}
+
 footer {margin:76px 0 0 0; background:#18c6cd; color:#fff}
-footer a {color:#fff; text-decoration:none}
-footer a:hover {color:#fff}
+footer a {color:#fff; text-decoration:none; transition:opacity 0.2s}
+footer a:hover {color:#fff; opacity:0.75}
 
 .footer-disclamer {padding:10px 0 0 0; font:24px/28px RobotoCondensed, sans-serif; letter-spacing:0.08em; text-transform:uppercase}
 
