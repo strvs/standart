@@ -106,6 +106,34 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    $('.main-slider-list').each(function() {
+        $('#main-slider-status-count').html($('.main-slider-item').length);
+    });
+
+    $('.main-slider-list').slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        prevArrow: '<button type="button" class="slick-prev"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#gallery-prev"></use></svg></button>',
+        nextArrow: '<button type="button" class="slick-next"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#gallery-next"></use></svg></button>',
+        dots: false
+    }).on('setPosition', function(event, slick) {
+        $('#main-slider-status-current').html($('.main-slider-list').slick('slickCurrentSlide') + 1);
+    }).on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+        $('#main-slider-status-current').html(nextSlide + 1);
+    });
+
+    $('.main-video-link').click(function(e) {
+        $('html').addClass('main-video-open');
+        e.preventDefault();
+    });
+
+    $(document).click(function(e) {
+        if ($(e.target).parents().filter('.main-video').length == 0) {
+            $('html').removeClass('main-video-open');
+        }
+    });
+
 });
 
 $(window).on('load resize scroll', function() {
@@ -120,7 +148,7 @@ $(window).on('load resize scroll', function() {
 
         var curPosition = windowScroll + windowHeight;
 
-        var curStart = curBlock.offset().top + windowHeight / 2;
+        var curStart = curBlock.offset().top + windowHeight * 3/4;
         var curStop = curBlock.offset().top + windowHeight;
         var curPersent = (curPosition - curStart) / (curStop - curStart);
 
@@ -128,13 +156,16 @@ $(window).on('load resize scroll', function() {
             if (curPersent <= 1) {
                 curBlock.find('.main-fear-light').css({'opacity': curPersent});
                 curBlock.find('.main-fear-icon').css({'top': -90 * curPersent});
+                curBlock.find('.main-fear-text').css({'top': 330 - 25 * curPersent});
             } else {
                 curBlock.find('.main-fear-light').css({'opacity': 1});
                 curBlock.find('.main-fear-icon').css({'top': -90});
+                curBlock.find('.main-fear-text').css({'top': 305});
             }
         } else {
             curBlock.find('.main-fear-light').css({'opacity': 0});
             curBlock.find('.main-fear-icon').css({'top': 0});
+            curBlock.find('.main-fear-text').css({'top': 330});
         }
     });
 

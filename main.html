@@ -18,6 +18,152 @@
         <!-- wrapper -->
         <div class="wrapper">
 
+            <header class="main-header">
+                <div class="container">
+                    <div class="header-container">
+
+                        <!-- top -->
+                        <div class="top">
+
+                            <div class="top-left">
+                                <div class="logo"></div>
+                                <div class="title">
+                                    <div class="title-inner">
+                                        <div class="title-line"></div>
+                                        <div class="title-text">Офтальмологическая клиника</div>
+                                        <div class="title-line"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- nav -->
+                            <div class="nav">
+                                <ul>
+                                    <li>
+                                        <a href="#">Услуги</a>
+                                        <ul>
+                                            <li><a href="#">Лазерная<br /> коррекция</a></li>
+                                            <li><a href="#">Лечение<br /> катаракты</a></li>
+                                            <li><a href="#">Реконструктивная<br /> хирургия век</a></li>
+                                            <li><a href="#">Ночные<br /> линзы</a></li>
+                                            <li><a href="#">Лечение<br /> глаукомы</a></li>
+                                            <li><a href="#">Лечение<br /> сетчатки</a></li>
+                                            <li><a href="#">Комплексная<br /> диагностика</a></li>
+                                            <li><a href="#">Детская<br /> офтальмология</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">Клиника</a>
+                                        <ul>
+                                            <li><a href="#">Миссия</a></li>
+                                            <li><a href="#">Оборудование и технологии</a></li>
+                                            <li><a href="#">ОМС</a></li>
+                                            <li><a href="#">Документы</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">Врачи</a>
+                                        <ul>
+                                            <li><a href="#">Врачи</a></li>
+                                            <li><a href="#">График приема</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">Отзывы</a>
+                                        <ul>
+                                            <li><a href="#">Отзывы с prodoctorov.ru</a></li>
+                                            <li><a href="#">Видео отзывы</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Цены</a></li>
+                                    <li>
+                                        <a href="#">Статьи</a>
+                                        <ul>
+                                            <li><a href="#">Все</a></li>
+                                            <li><a href="#">Лечение катаракты</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Контакты</a></li>
+                                </ul>
+                            </div>
+                            <!-- nav END -->
+
+                            <div class="top-right">
+                                <div class="top-right-record"><a href="windows/record.html" class="btn window-link"><svg><use xlink:href="images/sprite.svg#icon-calendar"></use></svg>Записаться</a></div>
+                                <a href="#" class="top-right-address"><svg><use xlink:href="images/sprite.svg#top-right-address"></use></svg></a>
+                                <a href="tel:+78412237070" class="top-right-phone">+7 (8412) 23-70-70</a>
+                            </div>
+
+                        </div>
+                        <!-- top END -->
+
+                        <div class="main-slider">
+                            <div class="main-slider-list">
+                                <div class="main-slider-item">
+                                    <div class="main-slider-item-inner">
+                                        <div class="main-slider-item-bg" style="background-image:url(files/main-slider-1.jpg)"></div>
+                                        <div class="main-slider-item-content">
+                                            <div class="main-slider-item-title">Европейский уровень офтальмологии в Пензе</div>
+                                            <div class="main-slider-item-btn"><a href="windows/record.html" class="btn window-link">Записаться на прием</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="main-slider-item">
+                                    <div class="main-slider-item-inner">
+                                        <div class="main-slider-item-bg" style="background-image:url(files/main-slider-2.jpg)"></div>
+                                        <div class="main-slider-item-content">
+                                            <div class="main-slider-item-title">Европейский уровень офтальмологии в Пензе</div>
+                                            <div class="main-slider-item-btn"><a href="windows/record.html" class="btn window-link">Записаться на прием</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="main-slider-status"><span id="main-slider-status-current">1</span> / <span id="main-slider-status-count">1</span></div>
+                        </div>
+
+                        <div class="main-video">
+                            <div class="main-video-inner">
+                                <div class="main-video-player" id="player"></div>
+                            </div>
+                            <a href="#" class="main-video-link">
+                                <div class="main-video-icon"><svg><use xlink:href="images/sprite.svg#main-video-icon"></use></svg><span>Смотреть видео</span></div>
+                            </a>
+                            <script>
+                                var tag = document.createElement('script');
+
+                                tag.src = "https://www.youtube.com/iframe_api";
+                                var firstScriptTag = document.getElementsByTagName('script')[0];
+                                firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+                                function onYouTubeIframeAPIReady() {
+                                    var player;
+                                    player = new YT.Player('player', {
+                                        videoId: 'ydY0-rcmvrk',
+                                        playerVars: {
+                                            'autoplay' : 1,
+                                            'controls': 1,
+                                            'showinfo': 0,
+                                            'mute' : 1,
+                                            'loop' : 1,
+                                            'modestbranding': 1
+                                        },
+                                        events: {
+                                            'onReady': onPlayerReady
+                                        }
+                                    });
+                                }
+                                function onPlayerReady(event) {
+                                    event.target.playVideo();
+                                }
+                            </script>
+                        </div>
+
+                        <div class="main-slider-history"></div>
+
+                    </div>
+                </div>
+            </header>
+
             <!-- container -->
             <div class="container">
 
@@ -317,25 +463,229 @@
                 </div>
                 <!-- main doctors END -->
 
+                <!-- main reviews -->
+                <div class="main-reviews">
+                    <div class="main-reviews-title">Отзывы</div>
+                    <h2>100+ отзывов о нас<br /> на сайте prodoctorov.ru</h2>
+                    <!-- main reviews list -->
+                    <div class="main-reviews-list">
+                        <div class="main-reviews-list-inner">
+                            <div class="main-reviews-item">
+                                <div class="main-reviews-item-review">
+                                    <div class="main-reviews-item-review-score"><span>+2.0</span>Отлично</div>
+                                    <div class="main-reviews-item-review-plus">Добрый день. Хотелось бы выразить огромную благодарность докторам Романову С. С. и Топоркову И. А. Спасибо вам огромное за ваш профессионализм, чуткое и внимательное отношение к пациентам. Мне была проведена операция. Я очень довольна. Настоящие профессионалы своего дела!</div>
+                                    <div class="main-reviews-item-review-minus"></div>
+                                    <div class="main-reviews-item-review-text">Общие впечатления от клиники отличные. Медперсонал всегда приветлив и вежлив.</div>
+                                </div>
+                                <div class="main-reviews-item-answer">
+                                    <div class="main-reviews-item-answer-title">Представитель клиники</div>
+                                    <div class="main-reviews-item-answer-text">Здравствуйте! Огромное спасибо за оставленный отзыв. Мы обязательно передадим врачам вашу благодарность. Приятно, что Вы доверяете опыту и профессионализму врачей. Рады, что посещение нашей клиники оставило у вас положительное впечатление. Спасибо, что выбрали клинику «Стандарт». Желаем Вам крепкого здоровья!</div>
+                                </div>
+                            </div>
+
+                            <div class="main-reviews-item">
+                                <div class="main-reviews-item-review">
+                                    <div class="main-reviews-item-review-score"><span>+2.0</span>Отлично</div>
+                                    <div class="main-reviews-item-review-plus">Добрый день. Хотелось бы выразить огромную благодарность докторам Романову С. С. и Топоркову И. А. Спасибо вам огромное за ваш профессионализм, чуткое и внимательное отношение к пациентам. Мне была проведена операция. Я очень довольна. Настоящие профессионалы своего дела!</div>
+                                    <div class="main-reviews-item-review-minus"></div>
+                                    <div class="main-reviews-item-review-text">Общие впечатления от клиники отличные. Медперсонал всегда приветлив и вежлив.</div>
+                                </div>
+                                <div class="main-reviews-item-answer">
+                                    <div class="main-reviews-item-answer-title">Представитель клиники</div>
+                                    <div class="main-reviews-item-answer-text">Здравствуйте! Огромное спасибо за оставленный отзыв. Мы обязательно передадим врачам вашу благодарность. Приятно, что Вы доверяете опыту и профессионализму врачей. Рады, что посещение нашей клиники оставило у вас положительное впечатление. Спасибо, что выбрали клинику «Стандарт». Желаем Вам крепкого здоровья!</div>
+                                </div>
+                            </div>
+
+                            <div class="main-reviews-item">
+                                <div class="main-reviews-item-review">
+                                    <div class="main-reviews-item-review-score"><span>+2.0</span>Отлично</div>
+                                    <div class="main-reviews-item-review-plus">Добрый день. Хотелось бы выразить огромную благодарность докторам Романову С. С. и Топоркову И. А. Спасибо вам огромное за ваш профессионализм, чуткое и внимательное отношение к пациентам. Мне была проведена операция. Я очень довольна. Настоящие профессионалы своего дела!</div>
+                                    <div class="main-reviews-item-review-minus"></div>
+                                    <div class="main-reviews-item-review-text">Общие впечатления от клиники отличные. Медперсонал всегда приветлив и вежлив.</div>
+                                </div>
+                                <div class="main-reviews-item-answer">
+                                    <div class="main-reviews-item-answer-title">Представитель клиники</div>
+                                    <div class="main-reviews-item-answer-text">Здравствуйте! Огромное спасибо за оставленный отзыв. Мы обязательно передадим врачам вашу благодарность. Приятно, что Вы доверяете опыту и профессионализму врачей. Рады, что посещение нашей клиники оставило у вас положительное впечатление. Спасибо, что выбрали клинику «Стандарт». Желаем Вам крепкого здоровья!</div>
+                                </div>
+                            </div>
+
+                            <div class="main-reviews-item">
+                                <div class="main-reviews-item-review">
+                                    <div class="main-reviews-item-review-score"><span>+2.0</span>Отлично</div>
+                                    <div class="main-reviews-item-review-plus">Добрый день. Хотелось бы выразить огромную благодарность докторам Романову С. С. и Топоркову И. А. Спасибо вам огромное за ваш профессионализм, чуткое и внимательное отношение к пациентам. Мне была проведена операция. Я очень довольна. Настоящие профессионалы своего дела!</div>
+                                    <div class="main-reviews-item-review-minus"></div>
+                                    <div class="main-reviews-item-review-text">Общие впечатления от клиники отличные. Медперсонал всегда приветлив и вежлив.</div>
+                                </div>
+                                <div class="main-reviews-item-answer">
+                                    <div class="main-reviews-item-answer-title">Представитель клиники</div>
+                                    <div class="main-reviews-item-answer-text">Здравствуйте! Огромное спасибо за оставленный отзыв. Мы обязательно передадим врачам вашу благодарность. Приятно, что Вы доверяете опыту и профессионализму врачей. Рады, что посещение нашей клиники оставило у вас положительное впечатление. Спасибо, что выбрали клинику «Стандарт». Желаем Вам крепкого здоровья!</div>
+                                </div>
+                            </div>
+
+                            <div class="main-reviews-item">
+                                <div class="main-reviews-item-review">
+                                    <div class="main-reviews-item-review-score"><span>+2.0</span>Отлично</div>
+                                    <div class="main-reviews-item-review-plus">Добрый день. Хотелось бы выразить огромную благодарность докторам Романову С. С. и Топоркову И. А. Спасибо вам огромное за ваш профессионализм, чуткое и внимательное отношение к пациентам. Мне была проведена операция. Я очень довольна. Настоящие профессионалы своего дела!</div>
+                                    <div class="main-reviews-item-review-minus"></div>
+                                    <div class="main-reviews-item-review-text">Общие впечатления от клиники отличные. Медперсонал всегда приветлив и вежлив.</div>
+                                </div>
+                                <div class="main-reviews-item-answer">
+                                    <div class="main-reviews-item-answer-title">Представитель клиники</div>
+                                    <div class="main-reviews-item-answer-text">Здравствуйте! Огромное спасибо за оставленный отзыв. Мы обязательно передадим врачам вашу благодарность. Приятно, что Вы доверяете опыту и профессионализму врачей. Рады, что посещение нашей клиники оставило у вас положительное впечатление. Спасибо, что выбрали клинику «Стандарт». Желаем Вам крепкого здоровья!</div>
+                                </div>
+                            </div>
+
+                            <div class="main-reviews-item">
+                                <div class="main-reviews-item-review">
+                                    <div class="main-reviews-item-review-score"><span>+2.0</span>Отлично</div>
+                                    <div class="main-reviews-item-review-plus">Добрый день. Хотелось бы выразить огромную благодарность докторам Романову С. С. и Топоркову И. А. Спасибо вам огромное за ваш профессионализм, чуткое и внимательное отношение к пациентам. Мне была проведена операция. Я очень довольна. Настоящие профессионалы своего дела!</div>
+                                    <div class="main-reviews-item-review-minus"></div>
+                                    <div class="main-reviews-item-review-text">Общие впечатления от клиники отличные. Медперсонал всегда приветлив и вежлив.</div>
+                                </div>
+                                <div class="main-reviews-item-answer">
+                                    <div class="main-reviews-item-answer-title">Представитель клиники</div>
+                                    <div class="main-reviews-item-answer-text">Здравствуйте! Огромное спасибо за оставленный отзыв. Мы обязательно передадим врачам вашу благодарность. Приятно, что Вы доверяете опыту и профессионализму врачей. Рады, что посещение нашей клиники оставило у вас положительное впечатление. Спасибо, что выбрали клинику «Стандарт». Желаем Вам крепкого здоровья!</div>
+                                </div>
+                            </div>
+
+                            <div class="main-reviews-item">
+                                <div class="main-reviews-item-review">
+                                    <div class="main-reviews-item-review-score"><span>+2.0</span>Отлично</div>
+                                    <div class="main-reviews-item-review-plus">Добрый день. Хотелось бы выразить огромную благодарность докторам Романову С. С. и Топоркову И. А. Спасибо вам огромное за ваш профессионализм, чуткое и внимательное отношение к пациентам. Мне была проведена операция. Я очень довольна. Настоящие профессионалы своего дела!</div>
+                                    <div class="main-reviews-item-review-minus"></div>
+                                    <div class="main-reviews-item-review-text">Общие впечатления от клиники отличные. Медперсонал всегда приветлив и вежлив.</div>
+                                </div>
+                                <div class="main-reviews-item-answer">
+                                    <div class="main-reviews-item-answer-title">Представитель клиники</div>
+                                    <div class="main-reviews-item-answer-text">Здравствуйте! Огромное спасибо за оставленный отзыв. Мы обязательно передадим врачам вашу благодарность. Приятно, что Вы доверяете опыту и профессионализму врачей. Рады, что посещение нашей клиники оставило у вас положительное впечатление. Спасибо, что выбрали клинику «Стандарт». Желаем Вам крепкого здоровья!</div>
+                                </div>
+                            </div>
+
+                            <div class="main-reviews-item">
+                                <div class="main-reviews-item-review">
+                                    <div class="main-reviews-item-review-score"><span>+2.0</span>Отлично</div>
+                                    <div class="main-reviews-item-review-plus">Добрый день. Хотелось бы выразить огромную благодарность докторам Романову С. С. и Топоркову И. А. Спасибо вам огромное за ваш профессионализм, чуткое и внимательное отношение к пациентам. Мне была проведена операция. Я очень довольна. Настоящие профессионалы своего дела!</div>
+                                    <div class="main-reviews-item-review-minus"></div>
+                                    <div class="main-reviews-item-review-text">Общие впечатления от клиники отличные. Медперсонал всегда приветлив и вежлив.</div>
+                                </div>
+                                <div class="main-reviews-item-answer">
+                                    <div class="main-reviews-item-answer-title">Представитель клиники</div>
+                                    <div class="main-reviews-item-answer-text">Здравствуйте! Огромное спасибо за оставленный отзыв. Мы обязательно передадим врачам вашу благодарность. Приятно, что Вы доверяете опыту и профессионализму врачей. Рады, что посещение нашей клиники оставило у вас положительное впечатление. Спасибо, что выбрали клинику «Стандарт». Желаем Вам крепкого здоровья!</div>
+                                </div>
+                            </div>
+
+                            <div class="main-reviews-item">
+                                <div class="main-reviews-item-review">
+                                    <div class="main-reviews-item-review-score"><span>+2.0</span>Отлично</div>
+                                    <div class="main-reviews-item-review-plus">Добрый день. Хотелось бы выразить огромную благодарность докторам Романову С. С. и Топоркову И. А. Спасибо вам огромное за ваш профессионализм, чуткое и внимательное отношение к пациентам. Мне была проведена операция. Я очень довольна. Настоящие профессионалы своего дела!</div>
+                                    <div class="main-reviews-item-review-minus"></div>
+                                    <div class="main-reviews-item-review-text">Общие впечатления от клиники отличные. Медперсонал всегда приветлив и вежлив.</div>
+                                </div>
+                                <div class="main-reviews-item-answer">
+                                    <div class="main-reviews-item-answer-title">Представитель клиники</div>
+                                    <div class="main-reviews-item-answer-text">Здравствуйте! Огромное спасибо за оставленный отзыв. Мы обязательно передадим врачам вашу благодарность. Приятно, что Вы доверяете опыту и профессионализму врачей. Рады, что посещение нашей клиники оставило у вас положительное впечатление. Спасибо, что выбрали клинику «Стандарт». Желаем Вам крепкого здоровья!</div>
+                                </div>
+                            </div>
+
+                            <div class="main-reviews-item">
+                                <div class="main-reviews-item-review">
+                                    <div class="main-reviews-item-review-score"><span>+2.0</span>Отлично</div>
+                                    <div class="main-reviews-item-review-plus">Добрый день. Хотелось бы выразить огромную благодарность докторам Романову С. С. и Топоркову И. А. Спасибо вам огромное за ваш профессионализм, чуткое и внимательное отношение к пациентам. Мне была проведена операция. Я очень довольна. Настоящие профессионалы своего дела!</div>
+                                    <div class="main-reviews-item-review-minus"></div>
+                                    <div class="main-reviews-item-review-text">Общие впечатления от клиники отличные. Медперсонал всегда приветлив и вежлив.</div>
+                                </div>
+                                <div class="main-reviews-item-answer">
+                                    <div class="main-reviews-item-answer-title">Представитель клиники</div>
+                                    <div class="main-reviews-item-answer-text">Здравствуйте! Огромное спасибо за оставленный отзыв. Мы обязательно передадим врачам вашу благодарность. Приятно, что Вы доверяете опыту и профессионализму врачей. Рады, что посещение нашей клиники оставило у вас положительное впечатление. Спасибо, что выбрали клинику «Стандарт». Желаем Вам крепкого здоровья!</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- main reviews list END -->
+                    <div class="main-reviews-btns">
+                        <a href="#" class="btn-border">Оставить отзыв на сайте<img src="images/main-reviews-btn.svg" alt="" /></a>
+                        <a href="#" class="btn-border">Все отзывы</a>
+                    </div>
+                </div>
+                <!-- main reviews END -->
+
+                <!-- main ratings -->
+                <div class="main-ratings">
+                    <div class="main-ratings-title">Независимые рейтинги</div>
+                    <div class="main-ratings-list">
+                        <div class="main-ratings-item">
+                            <a href="#" target="_blank">
+                                <div class="main-ratings-logo"><img src="files/main-ratings-1.png" alt="" /></div>
+                                <div class="main-ratings-item-rating">
+                                    <div class="main-ratings-item-rating-inner" style="width:92%"></div>
+                                </div>
+                                <div class="main-ratings-item-score">4.6</div>
+                                <div class="main-ratings-item-count">59 отзывов</div>
+                            </a>
+                        </div>
+
+                        <div class="main-ratings-item">
+                            <a href="#" target="_blank">
+                                <div class="main-ratings-logo"><img src="files/main-ratings-2.png" alt="" /></div>
+                                <div class="main-ratings-item-rating">
+                                    <div class="main-ratings-item-rating-inner" style="width:94%"></div>
+                                </div>
+                                <div class="main-ratings-item-score">4.7</div>
+                                <div class="main-ratings-item-count">23 отзыва</div>
+                            </a>
+                        </div>
+
+                        <div class="main-ratings-item">
+                            <a href="#" target="_blank">
+                                <div class="main-ratings-logo"><img src="files/main-ratings-3.png" alt="" /></div>
+                                <div class="main-ratings-item-rating">
+                                    <div class="main-ratings-item-rating-inner" style="width:82%"></div>
+                                </div>
+                                <div class="main-ratings-item-score">4.1</div>
+                                <div class="main-ratings-item-count">99 отзывов</div>
+                            </a>
+                        </div>
+
+                        <div class="main-ratings-item">
+                            <a href="#" target="_blank">
+                                <div class="main-ratings-logo"><img src="files/main-ratings-4.png" alt="" /></div>
+                                <div class="main-ratings-item-rating">
+                                    <div class="main-ratings-item-rating-inner" style="width:100%"></div>
+                                </div>
+                                <div class="main-ratings-item-score">5</div>
+                                <div class="main-ratings-item-count">9 отзывов</div>
+                            </a>
+                        </div>
+
+                        <div class="main-ratings-item">
+                            <a href="#" target="_blank">
+                                <div class="main-ratings-logo"><img src="files/main-ratings-5.png" alt="" /></div>
+                                <div class="main-ratings-item-rating">
+                                    <div class="main-ratings-item-rating-inner" style="width:84%"></div>
+                                </div>
+                                <div class="main-ratings-item-score">4.2</div>
+                                <div class="main-ratings-item-count">5 отзывов</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- main ratings END -->
+
                 <!-- main fear -->
                 <div class="main-fear">
                     <div class="main-fear-dark">
                         <div class="container">
-                            <div class="main-fear-text">
-                                <div class="main-fear-text-inner">
-                                    <div class="main-fear-icon"><svg><use xlink:href="images/sprite.svg#main-fear-dark"></use></svg></div>
-                                    Неизвестность<br /> может испугать
-                                </div>
+                            <div class="main-fear-inner">
+                                <div class="main-fear-text">Неизвестность<br /> может испугать</div>
+                                <div class="main-fear-icon"><svg><use xlink:href="images/sprite.svg#main-fear-dark"></use></svg></div>
                             </div>
                         </div>
                     </div>
                     <div class="main-fear-light">
                         <div class="container">
-                            <div class="main-fear-text">
-                                <div class="main-fear-text-inner">
-                                    <div class="main-fear-icon"><svg><use xlink:href="images/sprite.svg#main-fear-light"></use></svg></div>
-                                    В нашей клинике —<br /> атмосфера без<br /> страха!
-                                </div>
+                            <div class="main-fear-inner">
+                                <div class="main-fear-text">В нашей клинике —<br /> атмосфера без<br /> страха!</div>
+                                <div class="main-fear-icon"><svg><use xlink:href="images/sprite.svg#main-fear-light"></use></svg></div>
                             </div>
                         </div>
                     </div>
