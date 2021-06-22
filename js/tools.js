@@ -134,6 +134,28 @@ $(document).ready(function() {
         }
     });
 
+    $('.main-reviews-list-inner').each(function() {
+        $('#main-reviews-status-count').html($('.main-reviews-item').length);
+    });
+
+    $('.main-reviews-list-inner').slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        prevArrow: '<button type="button" class="slick-prev"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#gallery-prev"></use></svg></button>',
+        nextArrow: '<button type="button" class="slick-next"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#gallery-next"></use></svg></button>',
+        dots: false,
+        adaptiveHeight: true
+    }).on('setPosition', function(event, slick) {
+        $('.main-reviews-author').html($('.main-reviews-list-inner .slick-slide:not(.slick-cloned)').eq($('.main-reviews-list-inner').slick('slickCurrentSlide')).find('.main-reviews-item-author').html());
+        $('.main-reviews-author').removeClass('hidden');
+    }).on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+        $('.main-reviews-author').addClass('hidden');
+    }).on('afterChange', function(event, slick, currentSlide) {
+        $('.main-reviews-author').html($('.main-reviews-list-inner .slick-slide:not(.slick-cloned)').eq(currentSlide).find('.main-reviews-item-author').html());
+        $('.main-reviews-author').removeClass('hidden');
+    });
+
 });
 
 $(window).on('load resize scroll', function() {
@@ -168,6 +190,12 @@ $(window).on('load resize scroll', function() {
             curBlock.find('.main-fear-text').css({'top': 330});
         }
     });
+    
+    if (windowScroll > $('header').height()) {
+        $('.side-panel').addClass('visible');
+    } else {
+        $('.side-panel').removeClass('visible');
+    }
 
 });
 
