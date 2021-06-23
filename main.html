@@ -8,17 +8,18 @@
         <link rel="stylesheet" href="css/styles.css" />
         <link rel="stylesheet" href="js/slick/slick.css" />
         <link rel="stylesheet" href="js/fancybox/jquery.fancybox.min.css" />
+        <link rel="stylesheet" href="js/mcustomscrollbar/jquery.mCustomScrollbar.css" />
 
         <meta http-equiv="x-ua-compatible" content="ie=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
     </head>
 
-    <body>
+    <body class="page-main">
 
         <!-- wrapper -->
         <div class="wrapper">
 
-            <header class="main-header">
+            <header>
                 <div class="container">
                     <div class="header-container">
 
@@ -91,7 +92,8 @@
                             <div class="top-right">
                                 <div class="top-right-record"><a href="windows/record.html" class="btn window-link"><svg><use xlink:href="images/sprite.svg#icon-calendar"></use></svg>Записаться</a></div>
                                 <a href="#" class="top-right-address"><svg><use xlink:href="images/sprite.svg#top-right-address"></use></svg></a>
-                                <a href="tel:+78412237070" class="top-right-phone">+7 (8412) 23-70-70</a>
+                                <a href="#" class="mobile-menu-link"><svg><use xlink:href="images/sprite.svg#mobile-menu-link"></use></svg></a>
+                                <a href="tel:+78412237070" class="top-right-phone">+7 (8412) 23-70-70<svg><use xlink:href="images/sprite.svg#top-right-phone"></use></svg></a>
                             </div>
 
                         </div>
@@ -158,6 +160,8 @@
                             </script>
                         </div>
 
+                        <a href="https://www.youtube.com/watch?v=ydY0-rcmvrk" data-fancybox class="main-video-mobile"></a>
+
                         <div class="main-slider-history"></div>
 
                     </div>
@@ -190,10 +194,13 @@
                     <div class="main-services-list">
                         <div class="main-services-item">
                             <a href="#">
-                                <div class="main-services-item-eye"></div>
+                                <div class="main-services-item-img-mobile"><img src="images/main-services-1-mobile.png" alt="" /></div>
 
-                                <div class="main-services-item-1-text"></div>
-                                <div class="main-services-item-1-circle"></div>
+                                <div class="main-services-item-img-desktop">
+                                    <div class="main-services-item-eye"></div>
+                                    <div class="main-services-item-1-text"></div>
+                                    <div class="main-services-item-1-circle"></div>
+                                </div>
 
                                 <div class="main-services-item-title">Коррекция зрения</div>
                             </a>
@@ -201,22 +208,25 @@
 
                         <div class="main-services-item">
                             <a href="#">
-                                <div class="main-services-item-eye"></div>
+                                <div class="main-services-item-img-mobile"><img src="images/main-services-2-mobile.png" alt="" /></div>
 
-                                <div class="main-services-item-2-arrow-1"></div>
-                                <div class="main-services-item-2-arrow-2"></div>
-                                <div class="main-services-item-2-arrow-3"></div>
-                                <div class="main-services-item-2-arrow-4"></div>
-                                <div class="main-services-item-2-arrow-5"></div>
-                                <div class="main-services-item-2-arrow-6"></div>
-                                <div class="main-services-item-2-arrow-7"></div>
-                                <div class="main-services-item-2-dot-1"></div>
-                                <div class="main-services-item-2-dot-2"></div>
-                                <div class="main-services-item-2-dot-3"></div>
-                                <div class="main-services-item-2-dot-4"></div>
-                                <div class="main-services-item-2-dot-5"></div>
-                                <div class="main-services-item-2-dot-6"></div>
-                                <div class="main-services-item-2-dot-7"></div>
+                                <div class="main-services-item-img-desktop">
+                                    <div class="main-services-item-eye"></div>
+                                    <div class="main-services-item-2-arrow-1"></div>
+                                    <div class="main-services-item-2-arrow-2"></div>
+                                    <div class="main-services-item-2-arrow-3"></div>
+                                    <div class="main-services-item-2-arrow-4"></div>
+                                    <div class="main-services-item-2-arrow-5"></div>
+                                    <div class="main-services-item-2-arrow-6"></div>
+                                    <div class="main-services-item-2-arrow-7"></div>
+                                    <div class="main-services-item-2-dot-1"></div>
+                                    <div class="main-services-item-2-dot-2"></div>
+                                    <div class="main-services-item-2-dot-3"></div>
+                                    <div class="main-services-item-2-dot-4"></div>
+                                    <div class="main-services-item-2-dot-5"></div>
+                                    <div class="main-services-item-2-dot-6"></div>
+                                    <div class="main-services-item-2-dot-7"></div>
+                                </div>
 
                                 <div class="main-services-item-title">Хирургия катаракты</div>
                             </a>
@@ -224,18 +234,20 @@
 
                         <div class="main-services-item">
                             <a href="#">
-                                <div class="main-services-item-3-lines"></div>
+                                <div class="main-services-item-img-mobile"><img src="images/main-services-3-mobile.png" alt="" /></div>
 
-                                <div class="main-services-item-eye"></div>
-
-                                <div class="main-services-item-3-lines-front"></div>
-                                <div class="main-services-item-3-cross-1"></div>
-                                <div class="main-services-item-3-cross-2"></div>
-                                <div class="main-services-item-3-cross-3"></div>
-                                <div class="main-services-item-3-cross-4"></div>
-                                <div class="main-services-item-3-cross-5"></div>
-                                <div class="main-services-item-3-cross-6"></div>
-                                <div class="main-services-item-3-cross-7"></div>
+                                <div class="main-services-item-img-desktop">
+                                    <div class="main-services-item-3-lines"></div>
+                                    <div class="main-services-item-eye"></div>
+                                    <div class="main-services-item-3-lines-front"></div>
+                                    <div class="main-services-item-3-cross-1"></div>
+                                    <div class="main-services-item-3-cross-2"></div>
+                                    <div class="main-services-item-3-cross-3"></div>
+                                    <div class="main-services-item-3-cross-4"></div>
+                                    <div class="main-services-item-3-cross-5"></div>
+                                    <div class="main-services-item-3-cross-6"></div>
+                                    <div class="main-services-item-3-cross-7"></div>
+                                </div>
 
                                 <div class="main-services-item-title">Лечение глаукомы</div>
                             </a>
@@ -243,10 +255,13 @@
 
                         <div class="main-services-item main-services-item-inverse">
                             <a href="#">
-                                <div class="main-services-item-eye"></div>
+                                <div class="main-services-item-img-mobile"><img src="images/main-services-4-mobile.png" alt="" /></div>
 
-                                <div class="main-services-item-4-circle-1"></div>
-                                <div class="main-services-item-4-circle-2"></div>
+                                <div class="main-services-item-img-desktop">
+                                    <div class="main-services-item-eye"></div>
+                                    <div class="main-services-item-4-circle-1"></div>
+                                    <div class="main-services-item-4-circle-2"></div>
+                                </div>
 
                                 <div class="main-services-item-title">Комплексная диагностика</div>
                             </a>
@@ -254,29 +269,32 @@
 
                         <div class="main-services-item">
                             <a href="#">
-                                <div class="main-services-item-eye"></div>
+                                <div class="main-services-item-img-mobile"><img src="images/main-services-5-mobile.png" alt="" /></div>
 
-                                <div class="main-services-item-5-lines">
-                                    <div class="main-services-item-5-line-01"></div>
-                                    <div class="main-services-item-5-line-02"></div>
-                                    <div class="main-services-item-5-line-03"></div>
-                                    <div class="main-services-item-5-line-04"></div>
-                                    <div class="main-services-item-5-line-05"></div>
-                                    <div class="main-services-item-5-line-06"></div>
-                                    <div class="main-services-item-5-line-07"></div>
-                                    <div class="main-services-item-5-line-08"></div>
-                                    <div class="main-services-item-5-line-09"></div>
-                                    <div class="main-services-item-5-line-10"></div>
-                                    <div class="main-services-item-5-line-11"></div>
-                                    <div class="main-services-item-5-line-12"></div>
-                                    <div class="main-services-item-5-line-13"></div>
-                                    <div class="main-services-item-5-line-14"></div>
-                                    <div class="main-services-item-5-line-15"></div>
-                                    <div class="main-services-item-5-line-16"></div>
-                                    <div class="main-services-item-5-line-17"></div>
-                                    <div class="main-services-item-5-line-18"></div>
-                                    <div class="main-services-item-5-line-19"></div>
-                                    <div class="main-services-item-5-line-20"></div>
+                                <div class="main-services-item-img-desktop">
+                                    <div class="main-services-item-eye"></div>
+                                    <div class="main-services-item-5-lines">
+                                        <div class="main-services-item-5-line-01"></div>
+                                        <div class="main-services-item-5-line-02"></div>
+                                        <div class="main-services-item-5-line-03"></div>
+                                        <div class="main-services-item-5-line-04"></div>
+                                        <div class="main-services-item-5-line-05"></div>
+                                        <div class="main-services-item-5-line-06"></div>
+                                        <div class="main-services-item-5-line-07"></div>
+                                        <div class="main-services-item-5-line-08"></div>
+                                        <div class="main-services-item-5-line-09"></div>
+                                        <div class="main-services-item-5-line-10"></div>
+                                        <div class="main-services-item-5-line-11"></div>
+                                        <div class="main-services-item-5-line-12"></div>
+                                        <div class="main-services-item-5-line-13"></div>
+                                        <div class="main-services-item-5-line-14"></div>
+                                        <div class="main-services-item-5-line-15"></div>
+                                        <div class="main-services-item-5-line-16"></div>
+                                        <div class="main-services-item-5-line-17"></div>
+                                        <div class="main-services-item-5-line-18"></div>
+                                        <div class="main-services-item-5-line-19"></div>
+                                        <div class="main-services-item-5-line-20"></div>
+                                    </div>
                                 </div>
 
                                 <div class="main-services-item-title">Лечение заболеваний сетчатки</div>
@@ -285,9 +303,12 @@
 
                         <div class="main-services-item">
                             <a href="#">
-                                <div class="main-services-item-eye"></div>
+                                <div class="main-services-item-img-mobile"><img src="images/main-services-6-mobile.png" alt="" /></div>
 
-                                <div class="main-services-item-6-lines"></div>
+                                <div class="main-services-item-img-desktop">
+                                    <div class="main-services-item-eye"></div>
+                                    <div class="main-services-item-6-lines"></div>
+                                </div>
 
                                 <div class="main-services-item-title">Реконструктивная хирургия век</div>
                             </a>
@@ -295,12 +316,15 @@
 
                         <div class="main-services-item">
                             <a href="#">
-                                <div class="main-services-item-7-circle-1"></div>
-                                <div class="main-services-item-7-circle-2"></div>
-                                <div class="main-services-item-7-circle-3"></div>
-                                <div class="main-services-item-7-circle-4"></div>
+                                <div class="main-services-item-img-mobile"><img src="images/main-services-7-mobile.png" alt="" /></div>
 
-                                <div class="main-services-item-eye"></div>
+                                <div class="main-services-item-img-desktop">
+                                    <div class="main-services-item-7-circle-1"></div>
+                                    <div class="main-services-item-7-circle-2"></div>
+                                    <div class="main-services-item-7-circle-3"></div>
+                                    <div class="main-services-item-7-circle-4"></div>
+                                    <div class="main-services-item-eye"></div>
+                                </div>
 
                                 <div class="main-services-item-title">Детская офтальмология</div>
                             </a>
@@ -308,8 +332,11 @@
 
                         <div class="main-services-item main-services-item-black">
                             <a href="#">
-                                <div class="main-services-item-eye"></div>
+                                <div class="main-services-item-img-mobile"><img src="images/main-services-8-mobile.png" alt="" /></div>
 
+                                <div class="main-services-item-img-desktop">
+                                    <div class="main-services-item-eye"></div>
+                                </div>
                                 <div class="main-services-item-title">Ночные<br /> линзы</div>
                             </a>
                         </div>
@@ -669,9 +696,10 @@
                             </div>
                         </div>
                     </div>
+                    <div class="main-reviews-more"><a href="#">Показать еще 3 отзыва</a></div>
                     <!-- main reviews list END -->
                     <div class="main-reviews-btns">
-                        <a href="#" class="btn-border">Оставить отзыв на сайте<img src="images/main-reviews-btn.svg" alt="" /></a>
+                        <a href="#" class="btn-border">Оставить отзыв на&nbsp;сайте<img src="images/main-reviews-btn.svg" alt="" /></a>
                         <a href="#" class="btn-border">Все отзывы</a>
                     </div>
                 </div>
@@ -816,7 +844,6 @@
                 <!-- main equipment -->
                 <div class="main-equipment">
                     <div class="main-equipment-container">
-                        <div class="main-equipment-all"><a href="#">Подробнее<svg><use xlink:href="images/sprite.svg#all-link"></use></svg></a></div>
                         <h2>Новейшее оборудование</h2>
                         <div class="main-equipment-menu">
                             <ul>
@@ -857,6 +884,7 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="main-equipment-all"><a href="#">Подробнее<svg><use xlink:href="images/sprite.svg#all-link"></use></svg></a></div>
                     </div>
                 </div>
                 <!-- main equipment END -->
@@ -1192,6 +1220,7 @@
         <script src="js/jquery.mask.min.js"></script>
         <script src="js/validation/jquery.validate.min.js"></script>
         <script src="js/validation/messages_ru.js"></script>
+        <script src="js/mcustomscrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
         <script src="js/tools.js"></script>
 
     </body>

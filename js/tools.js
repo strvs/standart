@@ -70,7 +70,19 @@ $(document).ready(function() {
         slidesToScroll: 4,
         prevArrow: '<button type="button" class="slick-prev"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#gallery-prev"></use></svg></button>',
         nextArrow: '<button type="button" class="slick-next"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#gallery-next"></use></svg></button>',
-        dots: false
+        dots: false,
+        responsive: [
+            {
+                breakpoint: 1199,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    arrows: false,
+                    variableWidth: true,
+                    adaptiveHeight: true
+                }
+            }
+        ]
     });
 
     $('.main-doctors-list').slick({
@@ -79,7 +91,19 @@ $(document).ready(function() {
         slidesToScroll: 4,
         prevArrow: '<button type="button" class="slick-prev"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#gallery-prev"></use></svg></button>',
         nextArrow: '<button type="button" class="slick-next"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#gallery-next"></use></svg></button>',
-        dots: false
+        dots: false,
+        responsive: [
+            {
+                breakpoint: 1199,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    arrows: false,
+                    variableWidth: true,
+                    adaptiveHeight: true
+                }
+            }
+        ]
     });
 
     $('.main-equipment-menu ul li a').click(function(e) {
@@ -116,7 +140,16 @@ $(document).ready(function() {
         slidesToScroll: 1,
         prevArrow: '<button type="button" class="slick-prev"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#gallery-prev"></use></svg></button>',
         nextArrow: '<button type="button" class="slick-next"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#gallery-next"></use></svg></button>',
-        dots: false
+        dots: false,
+        responsive: [
+            {
+                breakpoint: 1199,
+                settings: {
+                    arrows: false,
+                    dots: true
+                }
+            }
+        ]
     }).on('setPosition', function(event, slick) {
         $('#main-slider-status-current').html($('.main-slider-list').slick('slickCurrentSlide') + 1);
     }).on('beforeChange', function(event, slick, currentSlide, nextSlide) {
@@ -138,6 +171,22 @@ $(document).ready(function() {
         $('#main-reviews-status-count').html($('.main-reviews-item').length);
     });
 
+    $('.main-reviews-more').each(function() {
+        if ($('.main-reviews-item').length > 1) {
+            $('.main-reviews-more').addClass('visible');
+        }
+    });
+
+    $('.main-reviews-more a').click(function(e) {
+        var curCount = $('.main-reviews-item:visible').length + 3;
+        $('.main-reviews-item:lt(' + curCount + ')').addClass('visible');
+        curCount = $('.main-reviews-item:visible').length;
+        if (curCount == $('.main-reviews-item').length) {
+            $('.main-reviews-more').removeClass('visible');
+        }
+        e.preventDefault();
+    });
+
     $('.main-reviews-list-inner').slick({
         infinite: true,
         slidesToShow: 1,
@@ -145,7 +194,13 @@ $(document).ready(function() {
         prevArrow: '<button type="button" class="slick-prev"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#gallery-prev"></use></svg></button>',
         nextArrow: '<button type="button" class="slick-next"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#gallery-next"></use></svg></button>',
         dots: false,
-        adaptiveHeight: true
+        adaptiveHeight: true,
+        responsive: [
+            {
+                breakpoint: 1199,
+                settings: 'unslick'
+            }
+        ]
     }).on('setPosition', function(event, slick) {
         $('.main-reviews-author').html($('.main-reviews-list-inner .slick-slide:not(.slick-cloned)').eq($('.main-reviews-list-inner').slick('slickCurrentSlide')).find('.main-reviews-item-author').html());
         $('.main-reviews-author').removeClass('hidden');
@@ -155,6 +210,49 @@ $(document).ready(function() {
         $('.main-reviews-author').html($('.main-reviews-list-inner .slick-slide:not(.slick-cloned)').eq(currentSlide).find('.main-reviews-item-author').html());
         $('.main-reviews-author').removeClass('hidden');
     });
+
+    $('.nav ul li').each(function() {
+        var curLi = $(this);
+        if (curLi.find('ul').length != 0) {
+            curLi.addClass('with-submenu');
+        }
+    });
+
+});
+
+$(window).on('load resize', function() {
+
+    if ($(window).width() > 1199) {
+        $('.nav').each(function() {
+            $(this).mCustomScrollbar('destroy');
+        });
+
+        $('.main-ratings-list').each(function() {
+            $(this).mCustomScrollbar('destroy');
+        });
+
+        $('.main-contacts-menu').each(function() {
+            $(this).mCustomScrollbar('destroy');
+        });
+    } else {
+        $('.nav').each(function() {
+            $(this).mCustomScrollbar({
+                axis: 'x'
+            });
+        });
+
+        $('.main-ratings-list').each(function() {
+            $(this).mCustomScrollbar({
+                axis: 'x'
+            });
+        });
+
+        $('.main-contacts-menu').each(function() {
+            $(this).mCustomScrollbar({
+                axis: 'x'
+            });
+        });
+    }
 
 });
 
@@ -190,7 +288,7 @@ $(window).on('load resize scroll', function() {
             curBlock.find('.main-fear-text').css({'top': 330});
         }
     });
-    
+
     if (windowScroll > $('header').height()) {
         $('.side-panel').addClass('visible');
     } else {
