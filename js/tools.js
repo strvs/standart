@@ -218,15 +218,51 @@ $(document).ready(function() {
         }
     });
 
+    $('.nav ul li a').click(function(e) {
+        if ($(window).width() < 1200) {
+            var curLi = $(this).parent();
+            if (curLi.find('ul').length > 0) {
+                $('.submenu-mobile').remove();
+                if (curLi.hasClass('open')) {
+                    curLi.removeClass('open');
+                } else {
+                    $('.nav ul li.open').removeClass('open');
+                    curLi.addClass('open');
+                    $('.wrapper').append('<div class="submenu-mobile"><div class="submenu-mobile-list"><ul>' + curLi.find('ul').html() + '</ul></div></div>');
+                }
+                e.preventDefault();
+            }
+        }
+    });
+
+    $('.footer-menu-title a').click(function(e) {
+        if ($(window).width() < 1200) {
+            $(this).parent().parent().toggleClass('open');
+            e.preventDefault();
+        }
+    });
+
+    $('.mobile-menu-link').click(function(e) {
+        $('.submenu-mobile').remove();
+        $('.nav ul li.open').removeClass('open');
+        if ($('html').hasClass('mobile-menu-open')) {
+            $('html').removeClass('mobile-menu-open');
+            $('.wrapper').css({'top': 'auto'});
+            $(window).scrollTop($('.wrapper').data('curScroll'));
+        } else {
+            var curScroll = $(window).scrollTop();
+            $('html').addClass('mobile-menu-open');
+            $('.wrapper').css({'top': -curScroll});
+            $('.wrapper').data('curScroll', curScroll);
+        }
+        e.preventDefault();
+    });
+
 });
 
 $(window).on('load resize', function() {
 
     if ($(window).width() > 1199) {
-        $('.nav').each(function() {
-            $(this).mCustomScrollbar('destroy');
-        });
-
         $('.main-ratings-list').each(function() {
             $(this).mCustomScrollbar('destroy');
         });
@@ -235,12 +271,6 @@ $(window).on('load resize', function() {
             $(this).mCustomScrollbar('destroy');
         });
     } else {
-        $('.nav').each(function() {
-            $(this).mCustomScrollbar({
-                axis: 'x'
-            });
-        });
-
         $('.main-ratings-list').each(function() {
             $(this).mCustomScrollbar({
                 axis: 'x'
@@ -253,6 +283,9 @@ $(window).on('load resize', function() {
             });
         });
     }
+
+    $('.submenu-mobile').remove();
+    $('.nav ul li.open').removeClass('open');
 
 });
 

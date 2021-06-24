@@ -90,6 +90,9 @@ header {position:relative; background:#12b3ba; color:#fff}
 @media screen and (max-width:1199px) {
     .top {height:96px; margin:0 -8px; padding:0}
     .top::before {left:0}
+
+    .mobile-menu-open .top {height:57px; background:#18c6cd; position:fixed; left:0; top:0; right:0; margin:0}
+    .mobile-menu-open .top::before {background:rgba(255, 255, 255, 0.64)}
 }
 
 .top-left {position:absolute; left:0; top:20px; width:calc((100vw - 1120px) / 2)}
@@ -138,8 +141,46 @@ header {position:relative; background:#12b3ba; color:#fff}
     .nav ul li:last-child {margin:0 8px 0 16px}
     .nav ul li a {height:38px; font-size:12px; line-height:38px; letter-spacing:0.02em}
     .nav ul li.with-submenu > a::after {content:""; display:inline-block; vertical-align:middle; margin:-2px 0 0 3px; width:7px; height:4px; background:url(../images/nav-arrow-mobile.svg) no-repeat}
-    .nav .mCSB_horizontal.mCSB_inside > .mCSB_container {margin:0}
-    .nav .mCSB_scrollTools.mCSB_scrollTools_horizontal {opacity:0 !important}
+    .nav ul li.with-submenu.open > a::after {transform:rotate(-180deg)}
+
+    .mobile-menu-open .nav {float:none; width:auto; border-top:none; white-space:normal; position:fixed; left:0; top:57px; right:0; bottom:0; z-index:10; background:#fff; padding:3px 8px 23px 8px; text-align:center}
+    .mobile-menu-open .nav ul {display:block}
+    .mobile-menu-open .nav ul li {display:block; margin:0; border-bottom:1px solid rgba(191, 195, 211, 0.64)}
+    .mobile-menu-open .nav ul li:first-child {margin:0}
+    .mobile-menu-open .nav ul li:last-child {margin:0}
+    .mobile-menu-open .nav ul li a {height:auto; padding:16px 0; position:relative; font-size:20px; line-height:24px; font-weight:600; letter-spacing:0; color:#222426; text-transform:none}
+    .mobile-menu-open .nav ul li ul {display:none; padding:0 0 24px 0; margin-top:-8px}
+    .mobile-menu-open .nav ul li.with-submenu > a::after {display:block; position:absolute; top:50%; right:0; margin:-16px 0 0 0; width:32px; height:32px; background:url(../images/nav-arrow-mobile-open.svg) no-repeat}
+    .mobile-menu-open .nav ul li.open ul {display:block}
+    .mobile-menu-open .nav ul li ul li {border-bottom:none}
+    .mobile-menu-open .nav ul li ul li a {font-size:15px; line-height:18px; letter-spacing:0.01em; color:#575d74; padding:8px 0}
+    .mobile-menu-open .nav ul li ul li a br {display:none}
+
+    .submenu-mobile {position:absolute; left:0; top:96px; right:0; bottom:0; background:rgba(0, 0, 0, 0.8); z-index:10; overflow:auto}
+    .mobile-menu-open .submenu-mobile {display:none}
+    .submenu-mobile ul {background:#fff; margin:0; padding:0 8px; list-style:none; text-align:center; font-weight:600; font-size:15px; line-height:18px; letter-spacing:0.01em}
+    .submenu-mobile ul li {margin:0; padding:0; border-top:1px solid rgba(191, 195, 211, 0.64)}
+    .submenu-mobile ul li:first-child {border-top:none}
+    .submenu-mobile ul li::before {display:none}
+    .submenu-mobile ul li a {color:#575d74; text-decoration:none; display:block; padding:19px 0}
+    .submenu-mobile ul li a br {display:none}
+}
+
+.nav-mobile {display:none}
+
+@media screen and (max-width:1199px) {
+    .mobile-menu-open .nav-mobile {display:block}
+    .nav-mobile {padding:23px 0 0 0}
+    .nav-mobile-address {font-size:15px; line-height:18px; letter-spacing:0.01em}
+    .nav-mobile-phone {margin:24px 0 0 0; font-size:15px; line-height:18px; letter-spacing:0.01em}
+    .nav-mobile-phone a {color:#222426; text-decoration:none}
+    .nav-mobile-schedule {margin:8px 0 0 0; font-size:15px; line-height:18px; letter-spacing:0.01em; color:#828ba9}
+    .nav-mobile-btn {margin:24px 0 0 0}
+    .nav-mobile-btn .btn {width:100%; font-size:15px; padding:0}
+    .nav-mobile-social {margin:24px 0 0 0; font-size:0; line-height:0; letter-spacing:-1px}
+    .nav-mobile-social a {display:inline-block; vertical-align:top; width:48px; height:48px; margin:0 0 0 24px}
+    .nav-mobile-social a:first-child {margin:0}
+    .nav-mobile-social a svg {display:block; width:48px; height:48px; fill:#18c6cd}
 }
 
 .top-right {position:absolute; top:20px; right:2.96%}
@@ -178,6 +219,14 @@ header {position:relative; background:#12b3ba; color:#fff}
 @media screen and (max-width:1199px) {
     .mobile-menu-link {display:block; float:right; border-left:1px solid #c4c4c4; width:59px; height:56px; position:relative}
     .mobile-menu-link svg {display:block; position:absolute; left:50%; top:50%; width:20px; height:18px; margin:-9px 0 0 -10px; fill:#fff}
+    .mobile-menu-link svg:nth-child(2) {width:16px; height:16px; margin:-8px 0 0 -8px; display:none}
+
+    .mobile-menu-open,
+    .mobile-menu-open body {overflow:hidden; position:fixed; left:0; top:0; right:0; bottom:0; height:auto}
+
+    .mobile-menu-open .mobile-menu-link {border-left-color:rgba(255, 255, 255, 0.64)}
+    .mobile-menu-open .mobile-menu-link svg:nth-child(1) {display:none}
+    .mobile-menu-open .mobile-menu-link svg:nth-child(2) {display:block}
 }
 
 .top-right-phone {float:right; margin:0 24px 0 0; font-size:15px; line-height:48px; letter-spacing:0.08em; color:#fff; text-decoration:none}
@@ -191,6 +240,8 @@ header {position:relative; background:#12b3ba; color:#fff}
 @media screen and (max-width:1199px) {
     .top-right-phone {display:block; margin:0; border-left:1px solid #c4c4c4; width:59px; height:56px; font-size:0; line-height:0; position:relative}
     .top-right-phone svg {display:block; position:absolute; left:50%; top:50%; width:23px; height:22px; fill:#fff; margin:-11px 0 0 -11.5px}
+
+    .mobile-menu-open .top-right-phone {border-left-color:rgba(255, 255, 255, 0.64)}
 }
 
 .main-slider {position:absolute; left:0; top:0; right:calc((1120px - 100vw) / 2); bottom:0}
@@ -650,6 +701,7 @@ header {position:relative; background:#12b3ba; color:#fff}
     .main-reviews {margin:59px 0 0 0; padding:0}
     .main-reviews h2 {margin:16px 0 0 0; max-width:none}
     .main-reviews-title {position:relative; left:auto; top:auto; transform:none}
+    .main-reviews-status {display:none}
     .main-reviews-author {display:none}
     .main-reviews-item-author {display:block}
     .main-reviews-item-author-info {margin:38px 0 0 0; width:auto; display:table; width:100%}
@@ -881,6 +933,7 @@ header {position:relative; background:#12b3ba; color:#fff}
 .main-contacts-tab {position:absolute; left:-9999px; top:-9999px; width:100%; opacity:0; transition:opacity 0.2s}
 .main-contacts-tab.active {position:relative; left:auto; top:auto; opacity:1}
 .main-contacts-tab::after {content:""; display:block; clear:both}
+.main-contacts-text-mobile {display:none}
 .main-contacts-text {float:right; width:231px; padding:17px 0 0 0}
 .main-contacts-address {font-weight:600}
 .main-contacts-address span {display:block; font-size:45px; line-height:52px}
@@ -905,19 +958,44 @@ header {position:relative; background:#12b3ba; color:#fff}
     .main-contacts-menu ul li a br {display:block}
     .main-contacts-menu .mCSB_horizontal.mCSB_inside > .mCSB_container {margin:0}
     .main-contacts-menu .mCSB_scrollTools.mCSB_scrollTools_horizontal {opacity:0 !important}
+    .main-contacts-tabs {margin:28px 0 0 0}
+    .main-contacts-text-mobile {display:block}
+    .main-contacts-text {display:none}
+    .main-contacts-map {float:none; width:auto; height:490px; margin:40px -8px 0 -8px}
 }
+
+.main-contacts-photo {position:relative; overflow:hidden; border-radius:16px}
+.main-contacts-photo img {display:block; max-width:none; height:168px; position:relative; left:50%; transform:translateX(-50%); border-radius:16px}
+.main-contacts-row {margin:20px 0 0 0; display:table; width:100%}
+.main-contacts-row+.main-contacts-row {margin:13px 0 0 0}
+.main-contacts-row-icon {display:table-cell; vertical-align:middle; width:48px}
+.main-contacts-row-icon-inner {width:48px; height:48px; border:1px solid #f46920; border-radius:50%; position:relative}
+.main-contacts-row-icon-inner svg {display:block; position:absolute; left:50%; top:50%; transform:translate(-50%, -50%); fill:#111}
+.main-contacts-row-text {display:table-cell; vertical-align:middle; padding:0 0 0 22px}
+.main-contacts-row-text span {display:block; font-size:15px; line-height:18px; letter-spacing:0.01em; color:#828ba9}
+.main-contacts-row-text a {color:#222426; text-decoration:none}
+.main-contacts-row-text a:hover {color:#18c6cd}
 
 footer {margin:76px 0 0 0; background:#18c6cd; color:#fff}
 footer a {color:#fff; text-decoration:none; transition:opacity 0.2s}
 footer a:hover {color:#fff; opacity:0.75}
 
 @media screen and (max-width:1199px) {
+    footer {margin:64px 0 0 0}
     .page-main footer {margin:0}
 }
 
-.footer-disclamer {padding:10px 0 0 0; font:24px/28px RobotoCondensed, sans-serif; letter-spacing:0.08em; text-transform:uppercase}
+.footer-disclamer {padding:10px 0 0 0; font:24px/28px RobotoCondensed, sans-serif; letter-spacing:0.08em; text-transform:uppercase; opacity:0.78}
+
+@media screen and (max-width:1199px) {
+    .footer-disclamer {padding:24px 0 0 0; font-size:20px; line-height:23px; letter-spacing:0.025em}
+}
 
 .footer-container {margin:15px 0 0 0; border-top:1px solid rgba(255, 255, 255, 0.3); padding:51px 0 0 0}
+
+@media screen and (max-width:1199px) {
+    .footer-container {margin:24px 0 0 0; padding:24px 0 0 0}
+}
 
 .footer-content {float:left}
 .footer-logo {width:209px; height:51px; background:url(../images/logo.svg) no-repeat; background-size:100% 100%}
@@ -930,6 +1008,17 @@ footer a:hover {color:#fff; opacity:0.75}
 .footer-phone-title {margin:50px 0 0 0; font-size:15px; line-height:18px; letter-spacing:0.01em}
 .footer-phone {margin:1px 0 0 0; font-weight:600; font-size:45px; line-height:52px}
 
+@media screen and (max-width:1199px) {
+    .footer-content {float:none}
+    .footer-contacts {margin:23px 0 0 0; border-top:1px solid rgba(255, 255, 255, 0.5)}
+    .footer-contacts::before {display:none}
+    .footer-address {margin:32px 0 0 0}
+    .footer-email {margin:16px 0 0 0}
+    .footer-feedback {margin:16px 0 0 0}
+    .footer-phone-title {margin:40px 0 0 0}
+    .footer-phone {margin:8px 0 0 0; font-size:28px; line-height:34px}
+}
+
 .footer-menu {float:right; margin:7px 0 0 0}
 .footer-menu-block {float:left; margin:0 0 0 58px}
 .footer-menu-block:first-child {margin:0}
@@ -939,6 +1028,15 @@ footer a:hover {color:#fff; opacity:0.75}
 .footer-menu-list ul li {margin:14px 0 0 0; padding:0}
 .footer-menu-list ul li::before {display:none}
 
+@media screen and (max-width:1199px) {
+    .footer-menu {float:none; margin:31px 0 0 0}
+    .footer-menu-block {float:none; margin:24px 0 0 0}
+    .footer-menu-title a::after {content:""; display:inline-block; vertical-align:top; width:26px; height:26px; margin:0 0 0 2px; background:url(../images/footer-menu-title-mobile.svg) no-repeat}
+    .footer-menu-block.open .footer-menu-title a::after {transform:rotate(-180deg)}
+    .footer-menu-list {display:none}
+    .footer-menu-block.open .footer-menu-list {display:block}
+}
+
 .footer-bottom {margin:63px 0 0 0; border-top:1px solid rgba(255, 255, 255, 0.5); padding:23px 0 30px 0}
 .footer-social {float:left; width:100%; text-align:center; font-size:0; line-height:0; letter-spacing:-1px; padding:0 0 0 250px}
 .footer-social a {display:inline-block; vertical-align:top; width:48px; height:48px; margin:0 0 0 24px}
@@ -947,6 +1045,17 @@ footer a:hover {color:#fff; opacity:0.75}
 .footer-copyrights {float:left; margin:17px 0 0 -100%; font-size:15px; line-height:18px; letter-spacing:0.01em}
 .footer-copyrights a {margin:0 0 0 32px}
 .footer-developer {float:left; margin:17px 0 0 -220px; width:220px; text-align:right; font-size:15px; line-height:18px; letter-spacing:0.01em}
+
+@media screen and (max-width:1199px) {
+    .footer-bottom {margin:34px 0 0 0; border-top:none; padding:0 0 35px 0}
+    .footer-social {float:none; width:auto; margin:0 -8px; padding:16px 0; border-top:1px solid rgba(255, 255, 255, 0.5); border-bottom:1px solid rgba(255, 255, 255, 0.5)}
+    .footer-social a {margin:0 0 0 37px}
+    .footer-social a:first-child {margin:0}
+    .footer-copyrights {float:none; margin:24px 0 0 0}
+    .footer-copyrights a {margin:8px 0 0 0; display:block}
+    .footer-copyrights a span {border-bottom:1px solid rgba(255, 255, 255, 0.64)}
+    .footer-developer {float:none; margin:24px 0 0 0; width:auto; text-align:left}
+}
 
 @media screen and (min-width:1200px) {
     ::-webkit-scrollbar-thumb {background:#18c6cd; border-radius:10px}
