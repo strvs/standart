@@ -76,8 +76,12 @@ label.error {display:none !important}
 
 .gallery {margin:40px 0; font-size:0; line-height:0; letter-spacing:-1px; position:relative; overflow:hidden; white-space:nowrap}
 .gallery.slick-initialized {overflow:visible}
-.gallery-item {display:inline-block; vertical-align:top; width:100%}
+.gallery-item {display:inline-block; vertical-align:top; width:100%; position:relative}
+.gallery-item a {display:block; position:relative}
 .gallery-item img {display:block; width:100%; border-radius:16px}
+.gallery-item span {display:block; position:absolute; left:50%; top:50%; transform:translate(-50%, -50%); padding:70px 0 0 0; color:#fff; font-size:15px; line-height:18px; letter-spacing:0.08em; text-transform:uppercase; transition:opacity 0.2s}
+.gallery-item span::before {content:""; z-index:1; display:block; width:24px; height:24px; position:absolute; left:50%; top:32px; margin:-12px 0 0 -12px; background:url(../images/main-history-item-preview-eye.svg) no-repeat}
+.gallery-item span::after {content:""; z-index:1; display:block; width:64px; height:64px; position:absolute; left:50%; top:0; margin-left:-32px; border:2px solid rgba(255, 255, 255, 0.81); border-radius:50%}
 .gallery .slick-prev,
 .gallery .slick-next {display:block; position:absolute; z-index:2; top:50%; width:40px; height:40px; border:none; border-radius:50%; margin:-20px 0 0 0; padding:0; outline:none; -webkit-appearance:none; cursor:pointer; background:#fff; transition:all 0.2s}
 .gallery .slick-prev {left:-20px}
@@ -295,12 +299,14 @@ header {position:relative; background:#12b3ba; color:#fff}
 }
 
 .header-back-link {padding:0 0 0 48px; margin:0 -999px 0 0; border-bottom:1px solid #c4c4c4; height:50px; line-height:49px}
-.header-back-link a {display:inline-block; vertical-align:middle}
-.header-back-link a svg {display:block; width:59px; height:16px; fill:#fff; transition:transform 0.2s}
+.header-back-link::after {content:""; display:block; clear:both}
+.header-back-link a {float:left; height:49px; line-height:49px}
+.header-back-link a svg {display:inline-block; vertical-align:middle; width:59px; height:16px; fill:#fff; transition:transform 0.2s}
 .header-back-link a:hover svg {transform:translateX(-5px)}
 
 @media screen and (max-width:1199px) {
     .header-back-link {padding:0; margin:0; border-bottom:none; height:auto; line-height:0; padding:16px 0 0 0}
+    .header-back-link a {float:none; height:auto; line-height:0}
 }
 
 .header-simple-content {display:table; width:100%; position:relative}
@@ -348,6 +354,11 @@ header {position:relative; background:#12b3ba; color:#fff}
 .header-photo-content-btn:first-child {margin:0}
 .header-photo-content-btn .btn-border {color:#fff; border-color:rgba(255, 255, 255, 0.64)}
 .header-photo-content-btn .btn-border:hover {color:#2ee0e8; border-color:#25e4ec}
+.header-back-link .header-photo-menu {float:left; padding:0; margin:0 0 0 34px; border-bottom:none; height:49px}
+.header-back-link .header-photo-menu ul li {margin:0 0 0 29px}
+.header-back-link .header-photo-menu ul li:first-child {margin:0}
+.header-back-link .header-photo-menu ul li.active::after {display:none}
+.header-back-link .header-photo-menu ul li a span {height:49px}
 
 @media screen and (max-width:1199px) {
     .header-photo {border-left:none}
@@ -1479,6 +1490,249 @@ p.text-anonce {font-size:24px; line-height:34px; margin:39px 0}
     .back-link {margin:40px -8px 0 -8px; padding:16px 8px 0 8px}
 }
 
+.doctors-card-header {margin:0 0 25px 0}
+.doctors-card-header::after {content:""; display:block; clear:both}
+.doctors-card-header-photo {float:left; width:228px; line-height:0}
+.doctors-card-header-photo img {display:block; width:100%; border-radius:50%}
+.doctors-card-header-container {margin:0 0 0 259px}
+.doctors-card-header-container h1 {margin:0}
+.doctors-card-header-container .header-photo-content-btns {margin:27px 0 0 0}
+.doctors-card-header-container .btn-border svg {display:inline-block; vertical-align:middle; width:20px; height:20px; margin:-2px 7px 0 0; fill:#fff; transition:fill 0.2s}
+.doctors-card-header-container .btn-border:hover svg {fill:#2ee0e8}
+
+@media screen and (max-width:1199px) {
+    .doctors-card-header {margin:0 0 13px 0}
+    .doctors-card-header-photo {display:none}
+    .doctors-card-header-container {margin:0}
+    .doctors-card-header-container .header-photo-content-btns {margin:16px 0 0 0}
+}
+
+.doctors-card-anonce {position:relative}
+.doctors-card-anonce::before {content:""; display:block; position:absolute; right:255px; top:10px; bottom:9px; width:1px; background:#bfc3d3}
+.doctors-card-anonce::after {content:""; display:block; clear:both}
+.doctors-card-anonce-text {float:left; width:calc(100% - 288px); font-size:24px; line-height:34px; letter-spacing:0.01em}
+.doctors-card-anonce-info {float:right; width:230px; padding:0 59px 0 0}
+.doctors-card-anonce-info-exp {margin:-6px 0 0 0}
+.doctors-card-anonce-info-exp-value {font-weight:600; font-size:72px; line-height:79px; color:#18c6cd}
+.doctors-card-anonce-info-exp-text {margin:-10px 0 0 0; font-weight:600; font-size:22px; line-height:26px}
+.doctors-card-anonce-info-text {margin:19px 0 0 0; font-size:15px; line-height:18px; letter-spacing:0.01em}
+.doctors-card-anonce-info-text p {margin:16px 0 0 0}
+
+@media screen and (max-width:1199px) {
+    .doctors-card-anonce::before {display:none}
+    .doctors-card-anonce-text {float:none; width:auto; font-size:18px; line-height:25px; letter-spacing:0}
+    .doctors-card-anonce-info {float:none; width:auto; margin:22px 0 0 0; padding:0 0 5px 21px; position:relative}
+    .doctors-card-anonce-info::before {content:""; display:block; position:absolute; left:0; top:11px; bottom:0; width:1px; background:#bfc3d3}
+    .doctors-card-anonce-info-exp {margin:0}
+}
+
+.doctor-card-exp {margin:35px 0}
+.doctor-card-exp-item {margin:32px 0; padding:0 0 0 191px; position:relative}
+.doctor-card-exp-item::before {content:""; display:block; position:absolute; left:0; top:12px; width:175px; height:1px; border-top:1px dashed #b7c5cb}
+.doctor-card-exp-item-years {position:absolute; left:0; top:0; background:#fff; padding:0 18px 0 0; font-weight:600; font-size:22px; line-height:26px}
+
+@media screen and (max-width:1199px) {
+    .doctor-card-exp {margin:32px 0}
+    .doctor-card-exp-item {margin:32px 0; padding:0}
+    .doctor-card-exp-item::before {display:none}
+    .doctor-card-exp-item-years {position:relative; left:auto; top:auto; background:none; padding:0; margin:0 0 16px 0}
+}
+
+.doctor-card-serts {margin:62px -16px 0 -16px; font-size:0; line-height:0; letter-spacing:-1px; white-space:nowrap; position:relative; overflow:hidden}
+.doctor-card-serts.slick-initialized {overflow:visible}
+.doctor-card-sert {display:inline-block; vertical-align:top; width:33.33%; padding:0 16px}
+.doctor-card-sert a {display:block; height:304px; border:1px solid #bfc3d3; border-radius:16px; padding:24px; position:relative; transition:border 0.2s; text-decoration:none; font-size:18px; line-height:25px; letter-spacing:0; white-space:normal}
+.doctor-card-sert a:hover {border-color:#12b3ba}
+.doctor-card-sert-title {font-weight:600; font-size:22px; line-height:26px; color:#222426; transition:opacity 0.2s}
+.doctor-card-sert a:hover .doctor-card-sert-title {opacity:0}
+.doctor-card-sert-text {margin:8px 0 0 0; font-size:15px; line-height:18px; color:#828ba9; transition:opacity 0.2s}
+.doctor-card-sert a:hover .doctor-card-sert-text {opacity:0}
+.doctor-card-sert-ext {position:absolute; left:24px; bottom:24px; width:48px; height:48px; background:url(../images/doc-ext.svg) no-repeat; text-align:center; font-weight:600; font-size:10px; line-height:48px; letter-spacing:-0.045em; text-transform:uppercase; color:#222426; transition:opacity 0.2s}
+.doctor-card-sert a:hover .doctor-card-sert-ext {opacity:0}
+.doctor-card-sert-preview {position:absolute; left:16px; top:16px; right:16px; bottom:16px; opacity:0}
+.doctor-card-sert a:hover .doctor-card-sert-preview {opacity:1; transition:opacity 0.2s}
+.doctor-card-sert-preview img {display:block; position:absolute; left:50%; top:50%; transform:translate(-50%, -50%); max-width:100%; max-height:100%; border-radius:16px; opacity:0.41}
+.doctor-card-sert-preview::after {content:""; display:block; width:64px; height:71px; position:absolute; left:50%; top:50%; margin:-42px 0 0 -32px; background:url(../images/doctor-card-sert-preview.svg) no-repeat}
+.doctor-card-serts .slick-prev,
+.doctor-card-serts .slick-next {display:block; position:absolute; z-index:2; top:50%; width:40px; height:40px; border:none; border-radius:50%; margin:-20px 0 0 0; padding:0; outline:none; -webkit-appearance:none; cursor:pointer; background:#fff; transition:all 0.2s}
+.doctor-card-serts .slick-prev {left:-4px}
+.doctor-card-serts .slick-next {right:-4px}
+.doctor-card-serts .slick-prev::before,
+.doctor-card-serts .slick-next::before {content:""; display:block; position:absolute; left:0; top:0; right:0; bottom:0; border:1px solid rgba(191, 195, 211, 0.64); border-radius:50%; background:#fff; transition:all 0.2s}
+.doctor-card-serts .slick-prev:hover::before,
+.doctor-card-serts .slick-next:hover::before {left:-4px; top:-4px; right:-4px; bottom:-4px}
+.doctor-card-serts .slick-prev.slick-disabled,
+.doctor-card-serts .slick-next.slick-disabled {display:none !important}
+.doctor-card-serts .slick-prev svg {display:block; position:absolute; left:50%; top:50%; width:24px; height:24px; margin:-12px 0 0 -12px; fill:#616161}
+.doctor-card-serts .slick-next svg {display:block; position:absolute; left:50%; top:50%; width:24px; height:24px; margin:-12px 0 0 -12px; fill:#616161}
+
+@media screen and (max-width:1199px) {
+    .doctor-card-serts {margin:0 -8px}
+    .doctor-card-sert {width:213px; padding:0 8px}
+    .doctor-card-sert a {width:197px; padding:12px}
+    .doctor-card-sert-ext {left:12px; bottom:12px}
+    .doctor-card-sert-preview {left:12px; top:12px; right:12px; bottom:12px}
+}
+
+.doctor-card-reviews {margin:120px 0 0 0}
+.doctor-card-reviews-header::after {content:""; display:block; clear:both}
+.doctor-card-reviews-header h2 {float:left; margin:0}
+.doctor-card-reviews-all {float:right; margin:26px 0 0 0; font-size:15px; line-height:18px; letter-spacing:0.01em}
+.doctor-card-reviews-all a {color:#575d74}
+.doctor-card-reviews-all a:hover {color:#18c6cd}
+
+@media screen and (max-width:1199px) {
+    .doctor-card-reviews {margin:100px 0 0 0}
+    .doctor-card-reviews-header h2 {max-width:50%}
+    .doctor-card-reviews-all {margin:12px 0 0 0}
+}
+
+.doctor-card-reviews-content::after {content:""; display:block; clear:both}
+.doctor-card-reviews-content .pd_rate_header {display:none}
+.doctor-card-reviews-content .pd_rate_choice {display:none}
+.doctor-card-reviews-content .pd_read_all {display:none}
+.doctor-card-reviews-content #pd_powered_by {display:none}
+
+@media screen and (max-width:1199px) {
+    .doctor-card-reviews-content {margin:29px 0 0 0}
+}
+
+.doctor-card-reviews-content #pd_widget_big blockquote,
+.doctor-card-reviews-content #pd_widget_big div,
+.doctor-card-reviews-content #pd_widget_big span,
+.doctor-card-reviews-content #pd_widget_big iframe,
+.doctor-card-reviews-content #pd_widget_big h1,
+.doctor-card-reviews-content #pd_widget_big h2,
+.doctor-card-reviews-content #pd_widget_big h3,
+.doctor-card-reviews-content #pd_widget_big p,
+.doctor-card-reviews-content #pd_widget_big a,
+.doctor-card-reviews-content #pd_widget_big em,
+.doctor-card-reviews-content #pd_widget_big img,
+.doctor-card-reviews-content #pd_widget_big q,
+.doctor-card-reviews-content #pd_widget_big table,
+.doctor-card-reviews-content #pd_widget_big caption,
+.doctor-card-reviews-content #pd_widget_big tbody,
+.doctor-card-reviews-content #pd_widget_big tr,
+.doctor-card-reviews-content #pd_widget_big th,
+.doctor-card-reviews-content #pd_widget_big td {box-sizing:border-box}
+
+.doctor-card-reviews-content #pd_widget_big {font-family:ProximaNova, sans-serif; max-width:none; padding:0 !important; width:auto !important}
+.doctor-card-reviews-content .pd_center {margin:0}
+.doctor-card-reviews-content #pd_widget_big_content {font-size:0; line-height:0; letter-spacing:-1px; margin:0 !important}
+.doctor-card-reviews-content #pd_widget_big_content br {display:none}
+.doctor-card-reviews-content .pd_rates {font-size:18px; line-height:25px !important; letter-spacing:0}
+.doctor-card-reviews-content .pd_rates > tbody > tr:first-child > td {border-top:none !important}
+.doctor-card-reviews-content .pd_rates > tbody > tr > td {padding:34px 0 0 27px !important; box-shadow:none}
+.doctor-card-reviews-content .pd_rates > tbody > tr > td:first-child {padding:34px 0 0 0 !important}
+.doctor-card-reviews-content .pd_mobile_operator_img {max-width:48px; border-radius:50%}
+.doctor-card-reviews-content .pd_patient_mobile {margin:8px 0 0 0 !important; font-size:15px; line-height:18px !important; letter-spacing:0.01em; color:#575d74 !important}
+.doctor-card-reviews-content .pd_rates .pd_block {margin:0 !important; padding:24px !important; border:1px solid #bfc3d3 !important; border-radius:16px}
+.doctor-card-reviews-content .pd_rates .pd_block::before {display:none}
+.doctor-card-reviews-content .pd_rates .pd_block::after {display:none}
+.doctor-card-reviews-content .pd_datetime {display:none}
+.doctor-card-reviews-content .pd_avg_rate {background-color:#f46920; height:24px; width:48px; border-radius:4px; display:inline-block; vertical-align:top; color:#fff !important; font-weight:600; line-height:24px !important; text-align:center; font-size:18px; margin:0 8px 0 30px !important}
+.doctor-card-reviews-content .pd_avg_text {color:#f46920 !important; font-size:22px; line-height:24px !important; font-weight:600}
+.doctor-card-reviews-content .pd_comment,
+.doctor-card-reviews-content .pd_comment_plus,
+.doctor-card-reviews-content .pd_comment_minus,
+.doctor-card-reviews-content .pd_comment_plus2,
+.doctor-card-reviews-content .pd_comment_minus2 {min-height:20px; padding-left:30px !important; background-position:left 3px}
+.doctor-card-reviews-content #pd_widget_big .pd_rates p {margin:9px 0 0 0 !important}
+.doctor-card-reviews-content .pd_moder {border:1px solid #bfc3d3 !important; border-radius:16px; -moz-border-radius:16px; -webkit-border-radius:16px; -khtml-border-radius:16px; margin:8px 0 0 97px !important; padding:20px 65px 20px 24px !important; font-size:15px; line-height:18px !important}
+.doctor-card-reviews-content .pd_moder div {font-family:ProximaNova, sans-serif; margin-bottom:11px !important; color:#18c6cd !important; font-weight:600; font-size:18px; line-height:25px !important}
+.doctor-card-reviews-btn {margin:34px 0 0 0}
+.doctor-card-reviews-btn a {width:100%; padding:0}
+.doctor-card-reviews-btn a img {display:inline-block; vertical-align:middle; margin:-2px 0 0 19px}
+
+@media screen and (max-width:1199px) {
+    .doctor-card-reviews-content .pd_rates {display:block}
+    .doctor-card-reviews-content .pd_rates tbody {display:block}
+    .doctor-card-reviews-content .pd_rates tr {display:block; margin:48px 0 0 0 !important}
+    .doctor-card-reviews-content .pd_rates tr:first-child {margin:0 !important}
+    .doctor-card-reviews-content .pd_rates td {display:block}
+    .doctor-card-reviews-content .pd_rates > tbody > tr > td {padding:16px 0 0 0 !important}
+    .doctor-card-reviews-content .pd_rates > tbody > tr > td:first-child {padding:0 !important; width:auto}
+    .doctor-card-reviews-content .pd_rates > tbody > tr > td:first-child::after {content:""; display:block; clear:both}
+    .doctor-card-reviews-content .pd_mobile_operator_img {float:left}
+    .doctor-card-reviews-content .pd_patient_mobile {float:left; margin:15px 0 0 9px !important}
+    .doctor-card-reviews-content .pd_rates .pd_block {margin:0 !important; padding:24px 12px !important}
+    .doctor-card-reviews-content .pd_moder {margin:8px 0 0 0 !important; padding:20px 20px 20px 40px !important}
+    .doctor-card-reviews-btn {margin:25px 0 0 0}
+    .doctor-card-reviews-btn a {float:none; width:auto; display:block; padding:22px 48px; height:auto; font-size:15px; line-height:18px; border-radius:100px; font-weight:normal}
+    .doctor-card-reviews-btn a img {display:block; margin:5px auto 0 auto}
+}
+
+.doctor-card-video-list {margin:0 -16px; font-size:0; line-height:0; letter-spacing:-1px; white-space:nowrap; position:relative; overflow:hidden}
+.doctor-card-video-list.slick-initialized {overflow:visible}
+.doctor-card-video-item {display:inline-block; vertical-align:top; width:33.33%; padding:0 16px; white-space:normal}
+.doctor-card-video-item a {display:block; text-decoration:none; color:#222426}
+.doctor-card-video-item a:hover {color:#18c6cd}
+.doctor-card-video-item-preview {position:relative; border-radius:16px; overflow:hidden}
+.doctor-card-video-item-preview img {display:block; width:100%; border-radius:16px}
+.doctor-card-video-item-preview span {display:block; position:absolute; left:0; padding:118px 0 0 0; top:0; bottom:0; border-radius:16px; right:0; background:rgba(0, 0, 0, 0.36); text-align:center; color:#fff; font-size:15px; line-height:18px; letter-spacing:0.08em; text-transform:uppercase; opacity:0; transition:opacity 0.2s}
+.doctor-card-video-item a:hover .doctor-card-video-item-preview span {opacity:1}
+.doctor-card-video-item-preview::before {content:""; z-index:1; display:block; width:24px; height:24px; position:absolute; left:50%; top:58px; margin-left:-12px; background:url(../images/main-history-item-preview-eye.svg) no-repeat; opacity:0; transition:opacity 0.2s}
+.doctor-card-video-item a:hover .doctor-card-video-item-preview::before {opacity:1}
+.doctor-card-video-item-preview::after {content:""; z-index:1; display:block; width:64px; height:71px; position:absolute; left:50%; top:31px; margin-left:-32px; background:url(../images/main-history-item-preview-border.svg) no-repeat; transform:scale(0); opacity:0; transition:transform 0.2s, opacity 0.2s}
+.doctor-card-video-item a:hover .doctor-card-video-item-preview::after {transform:scale(1); opacity:1}
+.doctor-card-video-item-title {margin:11px 0 0 0; border-top:2px solid #575d74; transition:border-color 0.2s; padding:13px 0 0 0; font-weight:600; font-size:22px; line-height:26px; letter-spacing:0}
+.doctor-card-video-item a:hover .doctor-card-video-item-title {border-color:#18c6cd}
+.doctor-card-video-item-theme {margin:8px 0 0 0; font-size:15px; line-height:18px; letter-spacing:0.01em; color:#828ba9}
+.doctor-card-video-list .slick-prev,
+.doctor-card-video-list .slick-next {display:block; position:absolute; z-index:2; top:64px; width:40px; height:40px; border:none; border-radius:50%; margin:0; padding:0; outline:none; -webkit-appearance:none; cursor:pointer; background:#fff; transition:all 0.2s}
+.doctor-card-video-list .slick-prev {left:-4px}
+.doctor-card-video-list .slick-next {right:-4px}
+.doctor-card-video-list .slick-prev::before,
+.doctor-card-video-list .slick-next::before {content:""; display:block; position:absolute; left:0; top:0; right:0; bottom:0; border:1px solid rgba(191, 195, 211, 0.64); border-radius:50%; background:#fff; transition:all 0.2s}
+.doctor-card-video-list .slick-prev:hover::before,
+.doctor-card-video-list .slick-next:hover::before {left:-4px; top:-4px; right:-4px; bottom:-4px}
+.doctor-card-video-list .slick-prev.slick-disabled,
+.doctor-card-video-list .slick-next.slick-disabled {display:none !important}
+.doctor-card-video-list .slick-prev svg {display:block; position:absolute; left:50%; top:50%; width:24px; height:24px; margin:-12px 0 0 -12px; fill:#616161}
+.doctor-card-video-list .slick-next svg {display:block; position:absolute; left:50%; top:50%; width:24px; height:24px; margin:-12px 0 0 -12px; fill:#616161}
+
+@media screen and (max-width:1199px) {
+    .doctor-card-video-list {margin:0 -8px}
+    .doctor-card-video-item {width:213px; padding:0 8px}
+    .doctor-card-video-item a {width:197px}
+    .doctor-card-video-item-title {margin:4px 0 0 0; padding:12px 0 0 0; font-size:20px; line-height:24px}
+    .doctor-card-video-item-theme {margin:12px 0 0 0}
+    .doctor-card-video-list .slick-slide {opacity:0.36; transition:opacity 0.3s}
+    .doctor-card-video-list .slick-active,
+    .doctor-card-video-list .slick-current {opacity:1}
+}
+
+.doctor-card-articles {margin:112px 0 0 0}
+.doctor-card-articles-header::after {content:""; display:block; clear:both}
+.doctor-card-articles-header h2 {float:left; margin:0}
+.doctor-card-articles-all {float:right; margin:26px 0 0 0; font-size:15px; line-height:18px; letter-spacing:0.01em}
+.doctor-card-articles-all a {color:#575d74}
+.doctor-card-articles-all a:hover {color:#18c6cd}
+
+@media screen and (max-width:1199px) {
+    .doctor-card-articles {margin:136px 0 0 0}
+    .doctor-card-articles-all {margin:8px 0 0 0}
+}
+
+.doctor-card-articles .articles {column-count:1; column-gap:0}
+.doctor-card-articles .article-main {margin:34px 0 0 0}
+.doctor-card-articles .article-main .article a {padding:24px 95px 24px 24px}
+
+@media screen and (max-width:1199px) {
+    .doctor-card-articles .article-main {margin:17px 0 0 0}
+    .doctor-card-articles .article-main .article a {padding:18px 52px 20px 0}
+}
+
+.header-photo-404-title {padding:23px 0 0 48px; font-size:14px; line-height:20px; font-weight:600; color:#fff; opacity:0.64; letter-spacing:0.205em; text-transform:uppercase}
+.header-photo-404-text {margin:20px 0 0 0}
+.header-photo-404-text+.header-photo-content-btns .btn {min-width:292px}
+
+@media screen and (max-width:1199px) {
+    .header-photo-404-title {padding:9px 0 0 8px}
+    .header-photo-404-text+.header-photo-content-btns {width:auto}
+    .header-photo-404-text+.header-photo-content-btns .btn {min-width:100%}
+}
+
 footer {margin:76px 0 0 0; background:#18c6cd; color:#fff}
 footer a {color:#fff; text-decoration:none; transition:opacity 0.2s}
 footer a:hover {color:#fff; opacity:0.75}
@@ -1583,3 +1837,23 @@ footer a:hover {color:#fff; opacity:0.75}
 @media screen and (max-width:1199px) {
     .side-panel {display:none}
 }
+
+.window-open,
+.window-open body {overflow:hidden; position:fixed; left:0; top:0; right:0; bottom:0}
+
+.window {position:fixed; left:0; top:0; right:0; bottom:0; overflow:auto; z-index:999; background:rgba(34, 36, 38, 0.7); text-align:center}
+.window::before {content:""; display:inline-block; height:100%; vertical-align:middle}
+.window-loading {position:absolute; left:50%; top:50%; width:91px; height:91px; margin:-45px 0 0 -45px; background:url(../images/loading.svg) no-repeat center}
+.window-container {display:inline-block; vertical-align:top; position:relative; text-align:left; background:#fff; margin:30px 0; transition:opacity 0.2s; border-radius:16px}
+.window-container-preload {opacity:0}
+.window-close {display:block; position:absolute; right:-84px; top:13px; width:48px; height:48px; background:#fff; border-radius:50%}
+.window-close:hover {opacity:1}
+.window-close::before {content:""; display:block; position:absolute; left:0; top:0; right:0; bottom:0; background:#fff; border-radius:50%; transition:all 0.2s}
+.window-close:hover::before {left:-4px; top:-4px; right:-4px; bottom:-4px}
+.window-close svg {display:block; width:14px; height:14px; fill:#222426; position:absolute; left:50%; top:50%; margin:-7px 0 0 -7px; transition:fill 0.2s}
+.window-close:hover svg {fill:#18c6cd}
+
+.window-record {width:736px; padding:48px}
+.window-record-title {font-weight:600; font-size:45px; line-height:49px}
+.window-record-form {margin:33px 0 0 0}
+.window-record-form form {margin:0; padding:0}

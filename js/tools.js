@@ -269,7 +269,11 @@ $(document).ready(function() {
     $('.nav ul li.active').each(function() {
         var curLi = $(this);
         if (curLi.find('ul').length == 1) {
-            $('.header-photo').prepend('<div class="header-photo-menu"><ul>' + curLi.find('ul').html() + '</ul></div>');
+            if ($('.header-back-link').length == 1) {
+                $('.header-back-link').append('<div class="header-photo-menu"><ul>' + curLi.find('ul').html() + '</ul></div>');
+            } else {
+                $('.header-photo').prepend('<div class="header-photo-menu"><ul>' + curLi.find('ul').html() + '</ul></div>');
+            }
             $('.header-photo-menu a').wrapInner('<span></span>');
         }
     });
@@ -304,6 +308,48 @@ $(document).ready(function() {
             curTabs.find('.tabs-content').eq(curIndex).addClass('active');
         }
         e.preventDefault();
+    });
+
+    $('.doctor-card-video-list').slick({
+        infinite: false,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        prevArrow: '<button type="button" class="slick-prev"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#gallery-prev"></use></svg></button>',
+        nextArrow: '<button type="button" class="slick-next"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#gallery-next"></use></svg></button>',
+        dots: false,
+        responsive: [
+            {
+                breakpoint: 1199,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    arrows: false,
+                    variableWidth: true,
+                    adaptiveHeight: true
+                }
+            }
+        ]
+    });
+
+    $('.doctor-card-serts').slick({
+        infinite: false,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        prevArrow: '<button type="button" class="slick-prev"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#gallery-prev"></use></svg></button>',
+        nextArrow: '<button type="button" class="slick-next"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#gallery-next"></use></svg></button>',
+        dots: false,
+        responsive: [
+            {
+                breakpoint: 1199,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    arrows: false,
+                    variableWidth: true,
+                    adaptiveHeight: true
+                }
+            }
+        ]
     });
 
 });
