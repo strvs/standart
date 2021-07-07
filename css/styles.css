@@ -51,13 +51,41 @@ blockquote {margin:106px 0; padding:0 0 0 51px; border-left:5px solid #18c6cd; f
 .btn-border:hover {color:#18c6cd; border-color:#12b3ba; text-decoration:none}
 
 .form-input {position:relative; margin:17px 0}
-.form-input span {position:absolute; left:0; top:21px; font-size:18px; line-height:25px; color:#222426; letter-spacing:0.02em; transition:all 0.2s; z-index:1; pointer-events:none}
+.form-input span {position:absolute; left:0; top:21px; font-size:18px; line-height:25px; color:#828ba9; letter-spacing:0.02em; transition:all 0.2s; z-index:1; pointer-events:none}
 .form-input.focus span,
 .form-input.full span {font-size:12px; line-height:17px; top:0; color:#18c6cd}
 .form-input input {position:relative; border:none; border-bottom:1px solid #bfc3d3; font:18px/25px ProximaNova, sans-serif; color:#222426; vertical-align:top; margin:0; padding:21px 0 8px 0; width:100%; height:55px; box-sizing:border-box; outline:none; border-radius:1px; background:transparent; -webkit-appearance:none; transition:border-color 0.2s}
 .form-input input:focus {border-bottom:2px solid #18c6cd; padding-bottom:7px}
 .form-input input.error {border-color:#f00}
 label.error {display:none !important}
+
+.form-select {position:relative; margin:17px 0}
+.form-select.focus {z-index:89}
+.form-select-current {position:relative; border-bottom:1px solid #bfc3d3; cursor:pointer}
+.form-select-current em {display:none; position:absolute; left:0; top:0; font-size:12px; line-height:17px; color:#18c6cd; letter-spacing:0.02em; font-style:normal}
+.form-select.full .form-select-current em {display:block}
+.form-select-current span {display:block; padding:21px 0 8px 0; height:55px; color:#828ba9; white-space:nowrap; position:relative; overflow:hidden; text-overflow:ellipsis; margin:0 40px 0 0}
+.form-select.focus .form-select-current span {color:#18c6cd}
+.form-select.full .form-select-current span {color:#222426}
+.form-select-current svg {display:block; width:32px; height:32px; fill:none; position:absolute; right:0; bottom:7px}
+.form-select.focus .form-select-current svg {transform:rotate(-180deg)}
+.form-select-list {display:none; position:absolute; left:0; top:100%; right:0; background:#fff; box-shadow:0px 18px 28px rgba(191, 195, 211, 0.45); border-radius:0 0 16px 16px}
+.form-select.focus .form-select-list {display:block}
+.form-select-list ul {margin:0; padding:15px 0 23px 0; list-style:none}
+.form-select-list ul li {margin:0; padding:0}
+.form-select-list ul li::before {display:none}
+.form-select-list ul li label {display:block; cursor:pointer}
+.form-select-list ul li input {display:none}
+.form-select-list ul li span {display:block; padding:5px 24px 7px 24px; font-size:18px; line-height:25px; letter-spacing:0.02em; color:#828ba9; transition:background 0.2s}
+.form-select-list ul li span.empty {color:#18c6cd}
+.form-select-list ul li label:hover span,
+.form-select-list ul li label input:checked+span {background:#ebf0f2}
+
+@media screen and (max-width:1199px) {
+    .form-select-list {position:fixed; top:0; bottom:0; z-index:99; background:rgba(0, 0, 0, 0.26); box-shadow:none; border-radius:0}
+    .form-select-list ul {position:absolute; left:0; top:auto; bottom:0; right:0; max-height:100%; width:100%; background:#fff; border-radius:16px 16px 0 0; padding:32px 0; text-align:center; overflow:auto}
+    .form-select-list ul li span {padding:8px 20px; font-size:15px; line-height:18px; font-weight:600; color:#575d74}
+}
 
 .form-ctrl {margin:38px 0 0 0}
 .form-ctrl::after {content:""; display:block; clear:both}
@@ -1386,7 +1414,9 @@ p.text-anonce {font-size:24px; line-height:34px; margin:39px 0}
 .doctors-header::after {content:""; display:block; clear:both}
 .doctors-header-link {float:left; margin:0 0 0 48px; width:146px; height:146px; border:1px solid #bfc3d3; border-radius:50%; padding:33px 20px 0 20px; text-align:center; font-weight:600; font-size:18px; line-height:25px; color:#222426}
 .doctors-header-link:hover {color:#18c6cd}
+.doctors-header-link.active {border-color:#18c6cd; background:#18c6cd; color:#fff}
 .doctors-header-link svg {display:block; width:24px; height:24px; opacity:0.8; fill:#222426; margin:0 auto 6px auto}
+.doctors-header-link.active svg {fill:#fff}
 .doctors-header-container {margin:0 40px 0 297px; padding:12px 0 0 0}
 .doctors-header-container p {margin:25px 0 0 0}
 .doctors-header-container p.text-anonce {margin:0 0 25px 0}
@@ -1733,6 +1763,45 @@ p.text-anonce {font-size:24px; line-height:34px; margin:39px 0}
     .header-photo-404-text+.header-photo-content-btns .btn {min-width:100%}
 }
 
+.schedule {margin:-12px 0 0 0}
+.schedule-item {margin:8px 0 0 0; border:1px solid #bfc3d3; border-radius:16px; position:relative; overflow:hidden}
+.schedule-item:first-child {margin:0}
+.schedule-item-header {display:block; cursor:pointer; position:relative; padding:18px 88px 18px 18px; transition:background 0.2s; border-radius:16px}
+.schedule-item.open .schedule-item-header {padding:26px 88px 43px 32px}
+.schedule-item-header:hover {background:#ebf0f2}
+.schedule-item-header::after {content:""; display:block; clear:both}
+.schedule-item-header-photo {float:left; width:50px}
+.schedule-item.open .schedule-item-header-photo {width:140px}
+.schedule-item-header-photo img {display:block; width:100%; border-radius:50%}
+.schedule-item-header-container {margin:0 0 0 72px}
+.schedule-item.open .schedule-item-header-container {margin:0 0 0 180px}
+.schedule-item-header-content {float:left; width:100%}
+.schedule-item-header-name {font-weight:600; font-size:22px; line-height:26px; padding:11px 0 0 0}
+.schedule-item.open .schedule-item-header-name {font-size:30px; line-height:36px; padding:9px 0 0 0}
+.schedule-item-header-cabinet {display:none; margin:5px 0 0 0; color:#828ba9}
+.schedule-item.open .schedule-item-header-cabinet {display:block}
+.schedule-item-header-btns {display:none; margin:20px 0 0 0}
+.schedule-item.open .schedule-item-header-btns {display:block}
+.schedule-item-header-btns::after {content:""; display:block; clear:both}
+.schedule-item-header-btn {float:left; margin:0 0 0 12px}
+.schedule-item-header-btn:first-child {margin:0}
+.schedule-item-header-btn .btn {height:48px; line-height:48px; padding:0 20px}
+.schedule-item-header-btn .btn-border {height:48px; line-height:46px; padding:0 42px}
+.schedule-item-header svg {display:block; width:40px; height:40px; fill:none; position:absolute; right:24px; top:22px}
+.schedule-item.open .schedule-item-header svg {transform:rotate(-180deg)}
+.schedule-item-container {display:none; padding:37px 48px 42px 48px}
+.schedule-item.open .schedule-item-container {display:block}
+.schedule-item-content {display:table; border-collapse:collapse}
+.schedule-item-weeks {display:table-row}
+.schedule-item-week {display:table-cell; vertical-align:middle; border-bottom:1px solid rgba(191, 195, 211, 0.64); padding:0 24px 24px 24px; font-weight:600}
+.schedule-item-day {display:table-row}
+.schedule-item-day-name {display:table-cell; vertical-align:middle; border-bottom:1px solid rgba(191, 195, 211, 0.64); padding:24px 24px 24px 0; font-weight:600}
+.schedule-item-day.weekend .schedule-item-day-name {color:#f46920}
+.schedule-item-day:last-child .schedule-item-day-name {padding-bottom:0; border-bottom:none}
+.schedule-item-day-schedule {display:table-cell; vertical-align:middle; border-bottom:1px solid rgba(191, 195, 211, 0.64); padding:24px}
+.schedule-item-day:last-child .schedule-item-day-schedule {padding-bottom:0; border-bottom:none}
+.schedule-item-day-schedule.holiday {color:#828ba9}
+
 footer {margin:76px 0 0 0; background:#18c6cd; color:#fff}
 footer a {color:#fff; text-decoration:none; transition:opacity 0.2s}
 footer a:hover {color:#fff; opacity:0.75}
@@ -1844,7 +1913,7 @@ footer a:hover {color:#fff; opacity:0.75}
 .window {position:fixed; left:0; top:0; right:0; bottom:0; overflow:auto; z-index:999; background:rgba(34, 36, 38, 0.7); text-align:center}
 .window::before {content:""; display:inline-block; height:100%; vertical-align:middle}
 .window-loading {position:absolute; left:50%; top:50%; width:91px; height:91px; margin:-45px 0 0 -45px; background:url(../images/loading.svg) no-repeat center}
-.window-container {display:inline-block; vertical-align:top; position:relative; text-align:left; background:#fff; margin:30px 0; transition:opacity 0.2s; border-radius:16px}
+.window-container {display:inline-block; vertical-align:middle; position:relative; text-align:left; background:#fff; margin:0; transition:opacity 0.2s; border-radius:16px}
 .window-container-preload {opacity:0}
 .window-close {display:block; position:absolute; right:-84px; top:13px; width:48px; height:48px; background:#fff; border-radius:50%}
 .window-close:hover {opacity:1}
@@ -1853,7 +1922,62 @@ footer a:hover {color:#fff; opacity:0.75}
 .window-close svg {display:block; width:14px; height:14px; fill:#222426; position:absolute; left:50%; top:50%; margin:-7px 0 0 -7px; transition:fill 0.2s}
 .window-close:hover svg {fill:#18c6cd}
 
+@media screen and (max-width:1199px) {
+    .window::before {display:none}
+    .window-container {display:block; background:#fff; border-radius:0; width:100vw}
+    .window-close {right:1px; top:11px; border-radius:0; background:none}
+    .window-close::before {display:none}
+}
+
 .window-record {width:736px; padding:48px}
 .window-record-title {font-weight:600; font-size:45px; line-height:49px}
+.window-record-title span {display:block; font-weight:600; font-size:14px; line-height:20px; letter-spacing:0.205em; text-transform:uppercase; color:#828ba9; margin:0 0 12px 0}
 .window-record-form {margin:33px 0 0 0}
 .window-record-form form {margin:0; padding:0}
+
+@media screen and (max-width:1199px) {
+    .window-record {width:auto; padding:0 8px 40px 8px}
+    .window-record-title {background:#ebf0f2; padding:18px 48px 18px 8px; margin:0 -8px; font-size:28px; line-height:34px}
+    .window-record-form {margin:40px 0 0 0}
+}
+
+.window-record-form .form-ctrl {margin:33px 0 0 0}
+.window-record-form .form-submit {width:100%; margin:40px 0 0 0}
+.window-record-form .form-submit .btn {min-width:100%}
+.window-record-form .form-policy {float:left; width:335px; margin:6px 0 0 0}
+.form-policy label {display:block; cursor:pointer}
+.form-policy input {display:none}
+.form-policy span {display:block; position:relative; padding:0 0 0 51px}
+.form-policy span::before {content:""; display:block; position:absolute; left:0; top:0; width:32px; height:32px; border:1px solid #bfc3d3; border-radius:2px; background:#fff url(../images/checkbox.svg) no-repeat -999px -999px}
+.form-policy input:checked+span::before,
+.form-policy input:checked+label+span::before {background-position:center}
+.form-policy input.error+span::before,
+.form-policy input.error+label+span::before {border-color:#f00}
+
+@media screen and (max-width:1199px) {
+    .window-record-form .form-ctrl {margin:40px 0 0 0}
+    .window-record-form .form-submit {margin:23px 0 0 0}
+    .window-record-form .form-policy {float:none; width:auto; margin:0}
+}
+
+.form-captcha {float:right; width:304px}
+
+@media screen and (max-width:1199px) {
+    .form-captcha {float:none; width:auto; margin:23px 0 0 0}
+}
+
+.window-record-notice {margin:30px 0 0 0; padding:0 0 0 50px; position:relative}
+.window-record-notice svg {display:block; width:30px; height:14px; position:absolute; left:0; top:5px; fill:#000}
+
+.window-success {width:544px; padding:40px 48px 48px 48px}
+.window-success-text {margin:24px 0 0 0}
+.window-success-btn {margin:40px 0 0 0}
+.window-success-btn .btn {display:block; width:100%}
+
+@media screen and (max-width:1199px) {
+    .window-success {width:auto; padding:0 8px 128px 8px; min-height:100vh; position:relative}
+    .window-success-text {margin:20px 0 0 0}
+    .window-success-btn {margin:0; position:absolute; left:8px; bottom:32px; right:8px}
+}
+
+.window-reminder {margin:38px 0 0 0}

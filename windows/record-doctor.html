@@ -1,0 +1,37 @@
+<div class="window-record">
+    <div class="window-record-title">Записаться на прием к врачу</div>
+    <div class="window-record-form">
+        <form action="windows/success.html" method="post" class="window-form">
+            <div class="form-select">
+                <div class="form-select-current" data-placeholder="Врач (выберите имя врача, при необходимости)"><em>Врач</em><span>Врач (выберите имя врача, при необходимости)</span><svg><use xlink:href="images/sprite.svg#form-select"></use></svg></div>
+                <div class="form-select-list">
+                    <ul>
+                        <li><label><input type="radio" name="doctor" value="" /><span class="empty">Не выбрано</span></label></li>
+                        <li><label><input type="radio" name="doctor" value="1" /><span>Комаров Андрей Викторович</span></label></li>
+                        <li><label><input type="radio" name="doctor" value="2" /><span>Шумилина Юлия Сергеевна</span></label></li>
+                        <li><label><input type="radio" name="doctor" value="3" /><span>Лазарева Жанна Николаевна</span></label></li>
+                        <li><label><input type="radio" name="doctor" value="4" /><span>Галеев Тимур Рашидович</span></label></li>
+                        <li><label><input type="radio" name="doctor" value="5" /><span>Романов Сергей Сергеевич</span></label></li>
+                        <li><label><input type="radio" name="doctor" value="6" /><span>Болдырева Ирина Александровна</span></label></li>
+                        <li><label><input type="radio" name="doctor" value="7" /><span>Кичерова Ольга Александровна</span></label></li>
+                        <li><label><input type="radio" name="doctor" value="8" /><span>Мысякова Мария Николаевна</span></label></li>
+                        <li><label><input type="radio" name="doctor" value="9" /><span>Шарков Олег Сергеевич</span></label></li>
+                        <li><label><input type="radio" name="doctor" value="10" /><span>Склярова Ольга Васильевна</span></label></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="form-input"><span>Ваше имя</span><input type="text" name="name" value="" class="required" /></div>
+            <div class="form-input"><span>Телефон</span><input type="text" name="phone" value="" class="required phoneRU" /></div>
+            <div class="form-ctrl">
+                <div class="form-policy"><label><input type="checkbox" name="policy" checked="checked" class="required" /><span>Нажимая кнопку, я соглашаюсь с <a href="#" target="_blank">Политикой</a> конфиденциальности и условиями обработки персональных данных</span></label></div>
+                <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+                <div class="form-captcha">
+                    <div class="g-recaptcha"></div>
+                    <input type="hidden" class="required" name="hiddenRecaptcha" value="" />
+                </div>
+                <div class="form-submit"><input type="submit" value="Записаться" class="btn" /></div>
+            </div>
+            <div class="window-record-notice"><svg><use xlink:href="images/sprite.svg#window-record-notice"></use></svg>В ближайшее время с вами свяжется администратор, проконсультирует по условиями и стоимости лечения, подберет врача и запишет вас на удобное время</div>
+        </form>
+    </div>
+</div>
