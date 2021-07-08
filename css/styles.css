@@ -1144,9 +1144,9 @@ header {position:relative; background:#12b3ba; color:#fff}
 
 .page::after {content:""; display:block; clear:both}
 
-.page-menu {float:left; width:175px; margin:40px 0 0 0; font-weight:600; font-size:15px; line-height:18px; letter-spacing:0.01em}
+.page-menu {float:left; width:200px; margin:40px 0 0 0; font-weight:600; font-size:15px; line-height:18px; letter-spacing:0.01em}
 .page-menu-inner {position:relative}
-.page-menu.fixed .page-menu-inner {position:fixed; top:0; width:175px}
+.page-menu.fixed .page-menu-inner {position:fixed; top:0; width:200px}
 .page-menu ul {margin:0; padding:17px 0 7px 25px; border-left:1px solid #828ba9; list-style:none}
 .page-menu ul li {margin:20px 0 0 0; padding:0; position:relative}
 .page-menu ul li::before {display:none}
@@ -1754,43 +1754,36 @@ p.text-anonce {font-size:24px; line-height:34px; margin:39px 0}
 }
 
 .header-photo-404-title {padding:23px 0 0 48px; font-size:14px; line-height:20px; font-weight:600; color:#fff; opacity:0.64; letter-spacing:0.205em; text-transform:uppercase}
-.header-photo-404-text {margin:20px 0 0 0}
-.header-photo-404-text+.header-photo-content-btns .btn {min-width:292px}
+.header-photo-text {margin:20px 0 0 0}
+.header-photo-text+.header-photo-content-btns .btn {min-width:292px}
 
 @media screen and (max-width:1199px) {
     .header-photo-404-title {padding:9px 0 0 8px}
-    .header-photo-404-text+.header-photo-content-btns {width:auto}
-    .header-photo-404-text+.header-photo-content-btns .btn {min-width:100%}
+    .header-photo-text+.header-photo-content-btns {width:auto}
+    .header-photo-text+.header-photo-content-btns .btn {min-width:100%}
 }
 
 .schedule {margin:-12px 0 0 0}
 .schedule-item {margin:8px 0 0 0; border:1px solid #bfc3d3; border-radius:16px; position:relative; overflow:hidden}
 .schedule-item:first-child {margin:0}
+.schedule-item-close {display:none}
 .schedule-item-header {display:block; cursor:pointer; position:relative; padding:18px 88px 18px 18px; transition:background 0.2s; border-radius:16px}
-.schedule-item.open .schedule-item-header {padding:26px 88px 43px 32px}
 .schedule-item-header:hover {background:#ebf0f2}
 .schedule-item-header::after {content:""; display:block; clear:both}
 .schedule-item-header-photo {float:left; width:50px}
-.schedule-item.open .schedule-item-header-photo {width:140px}
 .schedule-item-header-photo img {display:block; width:100%; border-radius:50%}
 .schedule-item-header-container {margin:0 0 0 72px}
-.schedule-item.open .schedule-item-header-container {margin:0 0 0 180px}
 .schedule-item-header-content {float:left; width:100%}
 .schedule-item-header-name {font-weight:600; font-size:22px; line-height:26px; padding:11px 0 0 0}
-.schedule-item.open .schedule-item-header-name {font-size:30px; line-height:36px; padding:9px 0 0 0}
 .schedule-item-header-cabinet {display:none; margin:5px 0 0 0; color:#828ba9}
-.schedule-item.open .schedule-item-header-cabinet {display:block}
 .schedule-item-header-btns {display:none; margin:20px 0 0 0}
-.schedule-item.open .schedule-item-header-btns {display:block}
 .schedule-item-header-btns::after {content:""; display:block; clear:both}
 .schedule-item-header-btn {float:left; margin:0 0 0 12px}
 .schedule-item-header-btn:first-child {margin:0}
 .schedule-item-header-btn .btn {height:48px; line-height:48px; padding:0 20px}
 .schedule-item-header-btn .btn-border {height:48px; line-height:46px; padding:0 42px}
 .schedule-item-header svg {display:block; width:40px; height:40px; fill:none; position:absolute; right:24px; top:22px}
-.schedule-item.open .schedule-item-header svg {transform:rotate(-180deg)}
 .schedule-item-container {display:none; padding:37px 48px 42px 48px}
-.schedule-item.open .schedule-item-container {display:block}
 .schedule-item-content {display:table; border-collapse:collapse}
 .schedule-item-weeks {display:table-row}
 .schedule-item-week {display:table-cell; vertical-align:middle; border-bottom:1px solid rgba(191, 195, 211, 0.64); padding:0 24px 24px 24px; font-weight:600}
@@ -1801,6 +1794,111 @@ p.text-anonce {font-size:24px; line-height:34px; margin:39px 0}
 .schedule-item-day-schedule {display:table-cell; vertical-align:middle; border-bottom:1px solid rgba(191, 195, 211, 0.64); padding:24px}
 .schedule-item-day:last-child .schedule-item-day-schedule {padding-bottom:0; border-bottom:none}
 .schedule-item-day-schedule.holiday {color:#828ba9}
+
+@media screen and (min-width:1200px) {
+    .schedule-item.open .schedule-item-header {padding:26px 88px 43px 32px; background:#ebf0f2; border-radius:16px 16px 0 0}
+    .schedule-item.open .schedule-item-header-photo {width:140px}
+    .schedule-item.open .schedule-item-header-container {margin:0 0 0 180px}
+    .schedule-item.open .schedule-item-header-name {font-size:30px; line-height:36px; padding:9px 0 0 0}
+    .schedule-item.open .schedule-item-header-cabinet {display:block}
+    .schedule-item.open .schedule-item-header-btns {display:block}
+    .schedule-item.open .schedule-item-header svg {transform:rotate(-180deg)}
+    .schedule-item.open .schedule-item-container {display:block}
+}
+
+@media screen and (max-width:1199px) {
+    .schedule-item {margin:0; border:none; border-bottom:1px solid #bfc3d3; border-radius:0}
+    .schedule-item-header {padding:18px 44px 18px 0; border-radius:0}
+    .schedule-item-header:hover {background:none}
+    .schedule-item-header::before {content:""; display:block; width:32px; height:32px; position:absolute; right:0; top:14px; background:url(../images/schedule-item-header-mobile.svg) no-repeat}
+    .schedule-item-header-photo {width:40px; margin-top:-3px}
+    .schedule-item-header-container {margin:0 0 0 52px}
+    .schedule-item-header-name {font-weight:normal; font-size:18px; line-height:25px; padding:0}
+    .schedule-item-header svg {display:none}
+
+    .schedule-item.open {position:fixed; left:0; top:0; right:0; bottom:0; border-bottom:none; overflow:auto; background:#fff; z-index:99}
+    .schedule-item.open .schedule-item-close {display:block; height:64px; position:relative; cursor:pointer}
+    .schedule-item.open .schedule-item-close svg {display:block; width:59px; height:16px; position:absolute; left:8px; top:50%; margin-top:-8px}
+    .schedule-item.open .schedule-item-header {padding:21px 8px 24px 8px; background:#ebf0f2}
+    .schedule-item.open .schedule-item-header::before {display:none}
+    .schedule-item.open .schedule-item-header-photo {width:64px; margin-top:0; margin-left:8px}
+    .schedule-item.open .schedule-item-header-container {margin:0}
+    .schedule-item.open .schedule-item-header-content {float:none; width:auto}
+    .schedule-item.open .schedule-item-header-name {margin:0 0 0 91px; font-weight:600; font-size:28px; line-height:34px}
+    .schedule-item.open .schedule-item-header-btns {display:block; float:left; width:100%; margin:16px 0 0 0}
+    .schedule-item-header-btn {float:none; margin:9px 0 0 0; width:252px}
+    .schedule-item-header-btn .btn {padding:0; width:100%}
+    .schedule-item-header-btn .btn-border {padding:0; width:100%}
+    .schedule-item-container {padding:41px 8px 43px 8px; overflow:auto}
+    .schedule-item.open .schedule-item-container {display:block}
+}
+
+.price-search form {margin:-21px 0 0 0; padding:0; position:relative}
+.price-search .form-input {margin:0}
+.price-search .form-input input {padding-right:32px}
+.price-search-submit {position:absolute; right:0; bottom:11px}
+.price-search-submit button {display:block; vertical-align:top; margin:0; padding:0; overflow:visible; width:24px; height:24px; outline:none; background:transparent; border:none; border-radius:0; position:relative; -webkit-appearance:none; cursor:pointer; box-sizing:border-box}
+.price-search-submit button svg {display:block; width:24px; height:24px; fill:#18c6cd; transition:fill 0.2s}
+.price-search-submit button:hover svg {fill:#828ba9}
+
+@media screen and (max-width:1199px) {
+    .price-search form {margin:-29px 0 0 0}
+}
+
+.price {margin:32px 0 0 0}
+.price-item {margin:8px 0 0 0; border:1px solid #bfc3d3; border-radius:16px; position:relative; overflow:hidden}
+.price-item.hidden {display:none}
+.price-item:first-child {margin:0}
+.price-item-close {display:none}
+.price-item-header {display:block; cursor:pointer; position:relative; padding:30px 78px 30px 58px; transition:background 0.2s; border-radius:16px}
+.price-item-header:hover {background:#ebf0f2}
+.price-item-header-number {position:absolute; left:24px; top:25px; font-weight:600; font-size:14px; line-height:20px; letter-spacing:0.205em; text-transform:uppercase; color:#828ba9; transform:rotate(-90deg) translateX(-100%); transform-origin:left top}
+.price-item-header-title {font-weight:600; font-size:22px; line-height:26px}
+.price-item-header svg {display:block; width:40px; height:40px; fill:none; position:absolute; right:24px; top:22px}
+.price-item-container {display:none; padding:40px 32px 50px 24px}
+.price-item-container h3 {margin:48px 0 0 0}
+.price-item-container h3:first-child {margin:0}
+.price-item-position {margin:32px 0 0 40px}
+.price-item-container h3+.price-item-position {margin:24px 0 0 40px}
+.price-item-position::after {content:""; display:block; clear:both}
+.price-item-position-text {float:left; width:calc(100% - 160px)}
+.price-item-position-number {margin:8px 0 0 0; font-weight:600; font-size:15px; line-height:18px; letter-spacing:0.01em; color:#bfc3d3; text-transform:uppercase}
+.price-item-position-cost {float:right; max-width:140px; font-size:24px; line-height:34px; letter-spacing:0.01em}
+.price-item-position-cost span {font-family:Roboto, sans-serif}
+
+@media screen and (min-width:1200px) {
+    .price-item.open .price-item-header {background:#ebf0f2; border-radius:16px 16px 0 0}
+    .price-item.open .price-item-header-title {font-size:36px; line-height:36px}
+    .price-item.open .price-item-header svg {transform:rotate(-180deg)}
+    .price-item.open .price-item-container {display:block}
+}
+
+@media screen and (max-width:1199px) {
+    .price {margin:40px 0 0 0}
+    .price-item {margin:0; border:none; border-bottom:1px solid #bfc3d3; border-radius:0}
+    .price-item-header {padding:18px 44px 18px 0; border-radius:0}
+    .price-item-header:hover {background:none}
+    .price-item-header::before {content:""; display:block; width:32px; height:32px; position:absolute; right:0; top:14px; background:url(../images/schedule-item-header-mobile.svg) no-repeat}
+    .price-item-header-number {display:none}
+    .price-item-header-title {font-weight:normal; font-size:18px; line-height:25px}
+    .price-item-header svg {display:none}
+
+    .price-item.open {position:fixed; left:0; top:0; right:0; bottom:0; border-bottom:none; overflow:auto; background:#fff; z-index:99}
+    .price-item.open .price-item-close {display:block; height:64px; position:relative; cursor:pointer}
+    .price-item.open .price-item-close svg {display:block; width:59px; height:16px; position:absolute; left:8px; top:50%; margin-top:-8px}
+    .price-item.open .price-item-header {padding:18px 8px; background:#ebf0f2}
+    .price-item.open .price-item-header::before {display:none}
+    .price-item.open .price-item-header-title {font-weight:600; font-size:28px; line-height:34px}
+    .price-item-container {padding:40px 8px}
+    .price-item.open .price-item-container {display:block}
+
+    .price-item-container h3 {margin:40px 0 0 0}
+    .price-item-container h3:first-child {margin:0}
+    .price-item-position {margin:32px 0 0 0}
+    .price-item-container h3+.price-item-position {margin:24px 0 0 0}
+    .price-item-position-text {float:none; width:auto}
+    .price-item-position-cost {max-width:none; margin:-22px 0 0 0}
+}
 
 footer {margin:76px 0 0 0; background:#18c6cd; color:#fff}
 footer a {color:#fff; text-decoration:none; transition:opacity 0.2s}

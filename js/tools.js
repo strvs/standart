@@ -382,11 +382,59 @@ $(document).ready(function() {
     });
 
     $('.schedule-item-header').click(function(e) {
-        if (!$(e.target).hasClass('btn') && !$(e.target).hasClass('btn-border')) {
-            $(this).parent().toggleClass('open');
+        if ($(window).width() > 1199) {
+            if (!$(e.target).hasClass('btn') && !$(e.target).hasClass('btn-border')) {
+                $(this).parent().toggleClass('open');
+            }
+        } else {
+            $(this).parent().addClass('open');
         }
     });
-    
+
+    $('.schedule-item-close').click(function(e) {
+        $(this).parents().filter('.schedule-item').removeClass('open');
+    });
+
+    $('.price-item-header').click(function(e) {
+        if ($(window).width() > 1199) {
+            $(this).parent().toggleClass('open');
+            $(window).trigger('resize');
+        } else {
+            $(this).parent().addClass('open');
+        }
+    });
+
+    $('.price-item-close').click(function(e) {
+        $(this).parents().filter('.price-item').removeClass('open');
+    });
+
+    $('.price-search form').each(function() {
+        var curForm = $(this);
+        var validator = curForm.validate();
+        validator.destroy();
+        curForm.validate({
+            ignore: '',
+            submitHandler: function(form) {
+                var curValue = $('.price-search .form-input input').val().trim().toLowerCase();
+                $('.price-item.hidden').removeClass('hidden');
+                if (curValue != '') {
+                    $('.price-item').each(function() {
+                        var curItem = $(this);
+                        var result = false;
+                        curItem.find('.price-item-position-title').each(function() {
+                            if ($(this).text().toLowerCase().indexOf(curValue) != -1) {
+                                result = true;
+                            }
+                        });
+                        if (!result) {
+                            curItem.addClass('hidden');
+                        }
+                    });
+                }
+            }
+        });
+    });
+
 });
 
 $(window).on('load resize', function() {
