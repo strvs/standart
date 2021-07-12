@@ -410,29 +410,128 @@ $(document).ready(function() {
 
     $('.price-search form').each(function() {
         var curForm = $(this);
+        curForm.find('input').attr('autocomplete', 'off');
         var validator = curForm.validate();
         validator.destroy();
         curForm.validate({
             ignore: '',
             submitHandler: function(form) {
-                var curValue = $('.price-search .form-input input').val().trim().toLowerCase();
-                $('.price-item.hidden').removeClass('hidden');
-                if (curValue != '') {
-                    $('.price-item').each(function() {
-                        var curItem = $(this);
-                        var result = false;
-                        curItem.find('.price-item-position-title').each(function() {
-                            if ($(this).text().toLowerCase().indexOf(curValue) != -1) {
-                                result = true;
-                            }
-                        });
-                        if (!result) {
-                            curItem.addClass('hidden');
-                        }
-                    });
-                }
             }
         });
+        curForm.find('input').on('keyup', function() {
+            var curValue = $('.price-search .form-input input').val().trim().toLowerCase();
+            $('.price-item.hidden').removeClass('hidden');
+            $('.price-item-position-title').each(function() {
+                $(this).html($(this).html().replace(/<span>/g, '').replace(/<\/span>/g, ''));
+            });
+            $('.price-item-position').removeClass('hidden');
+            $('.price-item-group').removeClass('hidden');
+            if (curValue != '') {
+                $('.price-item').each(function() {
+                    var curItem = $(this);
+                    var result = false;
+                    var count = 0;
+                    curItem.find('.price-item-position-title').each(function() {
+                        var curText = $(this).text();
+                        if (curText.toLowerCase().indexOf(curValue) != -1) {
+                            result = true;
+                            count++;
+
+                            var reg = new RegExp(curValue, 'gi');
+                            $(this).html($(this).html().replace(reg, function(str) {return '<span>' + str + '</span>'}));
+                        } else {
+                            var curPosition = $(this).parents().filter('.price-item-position');
+                            curPosition.addClass('hidden');
+                            var curGroup = curPosition.parents().filter('.price-item-group');
+                            if (curGroup.find('.price-item-position').length == curGroup.find('.price-item-position.hidden').length) {
+                                curGroup.addClass('hidden');
+                            }
+                        }
+                    });
+                    if (!result) {
+                        curItem.addClass('hidden');
+                        curItem.find('.price-item-header-count').html('').removeClass('visible');
+                    } else {
+                        curItem.find('.price-item-header-count').html(count).addClass('visible');
+                    }
+                });
+                $('.price-search-clear').addClass('visible');
+            } else {
+                $('.price-search-clear').removeClass('visible');
+                $('.price-item-header-count').html('').removeClass('visible');
+            }
+        });
+    });
+
+    $('.price-search-clear').click(function(e) {
+        $('.price-search .form-input input').val('');
+        window.setTimeout(function() {
+            $('.price-search .form-input input').trigger('keyup');
+            $('.price-search .form-input input').trigger('blur');
+        }, 300);
+        e.preventDefault();
+    });
+
+    $('.contacts-menu ul li a').click(function(e) {
+        var curLi = $(this).parent();
+        if (!curLi.hasClass('active')) {
+            $('.contacts-menu ul li.active').removeClass('active');
+            curLi.addClass('active');
+            var curIndex = $('.contacts-menu ul li').index(curLi);
+            $('.contacts-tab.active').removeClass('active');
+            $('.contacts-tab').eq(curIndex).addClass('active');
+            myMap.geoObjects.removeAll();
+            if (curIndex == 0) {
+                myMap.geoObjects.add(myPlacemark1);
+            }
+            if (curIndex == 1) {
+                myMap.geoObjects.add(myPlacemark2);
+            }
+            if (curIndex == 2) {
+                myMap.geoObjects.add(myPlacemark3);
+            }
+        }
+        e.preventDefault();
+    });
+
+    $('.video-filter input').change(function() {
+        $('.video-item').each(function() {
+            var curItem = $(this);
+            var curType = curItem.find('.video-item-type').text();
+            var result = false;
+            $('.video-filter input:checked').each(function() {
+                if ($(this).parent().find('span').text() == curType) {
+                    result = true;
+                }
+            });
+            if (result) {
+                curItem.removeClass('hidden');
+            } else {
+                curItem.addClass('hidden');
+            }
+        });
+    });
+
+    $('.video-list').each(function() {
+        if ($('.video-item').length > 18) {
+            $('.video-list').data('curSize', 18);
+            $('.video-list-more').addClass('visible');
+        }
+    });
+
+    $('.video-list-more a').click(function(e) {
+        var curSize = Number($('.video-list').data('curSize')) + 18;
+        $('.video-list').data('curSize', curSize);
+        $('.video-item:lt(' + curSize + ')').addClass('visible');
+        if (curSize >= $('.video-item').length) {
+            $('.video-list-more').removeClass('visible');
+        }
+        e.preventDefault();
+    });
+    
+    $('.video-filter-title a').click(function(e) {
+        $('.video-filter').toggleClass('open');
+        e.preventDefault();
     });
 
 });
@@ -447,6 +546,10 @@ $(window).on('load resize', function() {
         $('.main-contacts-menu').each(function() {
             $(this).mCustomScrollbar('destroy');
         });
+
+        $('.contacts-menu').each(function() {
+            $(this).mCustomScrollbar('destroy');
+        });
     } else {
         $('.main-ratings-list').each(function() {
             $(this).mCustomScrollbar({
@@ -455,6 +558,12 @@ $(window).on('load resize', function() {
         });
 
         $('.main-contacts-menu').each(function() {
+            $(this).mCustomScrollbar({
+                axis: 'x'
+            });
+        });
+
+        $('.contacts-menu').each(function() {
             $(this).mCustomScrollbar({
                 axis: 'x'
             });
