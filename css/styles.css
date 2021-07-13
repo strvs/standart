@@ -1412,6 +1412,7 @@ p.text-anonce {font-size:24px; line-height:34px; margin:39px 0}
 @media screen and (max-width:1199px) {
     .service-header {margin:26px 0 0 0}
     .service-header-letter {margin:0; width:64px; height:64px; background:url(../images/service-header-letter-mobile.png) no-repeat; padding:5px 0 0 7px}
+    .service-header-letter-n svg {width:32px; height:38px; margin:5px 0 0 2px}
     .service-header-letter-g svg {width:25px; height:38px; margin:5px 0 0 3px}
     .service-header-letter-s svg {width:35px; height:39px; margin:7px 0 0 5px}
     .service-header-letter-k svg {width:29px; height:38px; margin:5px 0 0 6px}
@@ -1460,6 +1461,179 @@ p.text-anonce {font-size:24px; line-height:34px; margin:39px 0}
     .glaucoma-symptoms-text ol li::before {top:0; z-index:1}
     .glaucoma-symptoms-text ol li:last-child::after {content:""; display:block; position:absolute; left:23px; top:0; bottom:0; width:1px; background:#ebf0f2}
     .glaucoma-symptoms-img {display:block; width:auto; border-radius:0}
+}
+
+.service-principle {margin:120px 0 0 0; border-top:1px solid rgba(191, 195, 211, 0.64); padding:56px 0 0 0; position:relative}
+.service-principle-title {position:absolute; left:0; top:-10px; padding:0 30px 0 0; background:#fff; font-weight:600; font-size:14px; line-height:20px; letter-spacing:0.205em; text-transform:uppercase; color:#828ba9}
+.service-principle h2 {margin:0}
+.service-principle-list {font-size:0; line-height:0; letter-spacing:-1px; white-space:nowrap; margin:26px 0 0 0; position:relative; overflow:hidden}
+.service-principle-item {display:inline-block; vertical-align:top; width:257px; height:304px; margin:0 0 0 30px; border:1px solid #bfc3d3; border-radius:16px; white-space:normal; padding:17px 24px 0 24px; position:relative}
+.service-principle-item:first-child {margin:0}
+.service-principle-item-img {height:176px}
+.service-principle-item-img img {max-height:100%}
+.service-principle-item-number {position:absolute; left:20px; top:20px; width:48px; height:48px; border:1px solid #f46920; background:#fff; border-radius:50%; font-weight:600; font-size:22px; line-height:46px; letter-spacing:0; text-align:center}
+.service-principle-item-title {margin:18px 0 0 0; font-weight:600; font-size:22px; line-height:26px; letter-spacing:0}
+.service-principle-item-text {margin:2px 0 0 0; font-size:15px; line-height:18px; letter-spacing:0.01em; color:#828ba9}
+
+@media screen and (max-width:1199px) {
+    .service-principle {margin:40px 0 0 0; padding:41px 0 0 0}
+    .service-principle-title {padding:0 14px 0 0}
+    .service-principle-list {margin:19px -8px 0 -8px; overflow:auto}
+    .service-principle-item {width:197px; height:253px; margin:0 8px; padding:12px 12px 0 12px}
+    .service-principle-item:first-child {margin:0 8px}
+    .service-principle-item-img {height:152px}
+    .service-principle-item-number {left:12px; top:12px}
+    .service-principle-item-title {margin:13px 0 0 0; font-size:20px; line-height:24px}
+    .service-principle-list .mCSB_horizontal.mCSB_inside > .mCSB_container {margin:0}
+    .service-principle-list .mCSB_scrollTools.mCSB_scrollTools_horizontal {opacity:0 !important}
+}
+
+.service-notice {margin:71px 0 0 0; padding:45px 46px 55px 80px; background:#ebf0f2; border-radius:16px}
+
+@media screen and (max-width:1199px) {
+    .service-notice {margin:47px -8px 0 -8px; padding:40px 8px 46px 8px; border-radius:0}
+}
+
+.service-prefs {margin:120px 0 0 0; position:relative; padding:0 0 0 287px}
+.service-prefs::before {content:""; display:block; position:absolute; left:97px; top:0; bottom:0; width:1px; background:rgba(191, 195, 211, 0.64)}
+.service-prefs-title {position:absolute; left:0; top:7px; font-weight:600; font-size:14px; line-height:20px; letter-spacing:0.205em; text-transform:uppercase; color:#828ba9; transform:rotate(-90deg) translateX(-100%); transform-origin:left top}
+.service-prefs-block {position:relative}
+.service-prefs-block+.service-prefs-block {margin:72px 0 0 0}
+.service-prefs-block svg {display:block; position:absolute; left:-214px; top:0; width:48px; height:48px; fill:none}
+.service-prefs-block h2 {margin-top:0}
+.service-prefs-block *:last-child {margin-bottom:0}
+.service-prefs-notice {color:#828ba9; margin:24px 0 0 0; font-size:15px; line-height:18px; letter-spacing:0.01em}
+
+@media screen and (max-width:1199px) {
+    .service-prefs {margin:87px 0 0 0; padding:0}
+    .service-prefs::before {display:none}
+    .service-prefs-title {position:relative; left:auto; top:auto; transform:none}
+    .service-prefs-block {margin:37px 0 0 0}
+    .service-prefs-block+.service-prefs-block {margin:117px 0 0 0}
+}
+
+.service-callback {margin:93px 0 0 0; position:relative; background:#ebf0f2; padding:61px 0 68px 0}
+.service-callback::before {content:""; display:block; position:absolute; left:calc((1120px - 100vw) / 2 + 64px); top:0; right:calc((1120px - 100vw) / 2 + 64px); bottom:0; background:#ebf0f2 url(../images/service-callback.jpg) no-repeat center bottom; border-radius:16px}
+.service-callback::after {content:""; display:block; clear:both}
+.service-callback-container {position:relative; float:right; width:542px}
+.service-callback-title {font-weight:600; font-size:36px; line-height:41px}
+.service-callback-form {margin:37px 0 0 0}
+.service-callback-form form {margin:0; padding:0; position:relative}
+.service-callback-input {position:relative; width:293px}
+.service-callback-input input {position:relative; border:1px solid #fff; font:18px/25px ProximaNova, sans-serif; letter-spacing:0.02em; color:#222426; vertical-align:top; margin:0; padding:19px 40px 18px 25px; width:100%; height:64px; box-sizing:border-box; outline:none; border-radius:32px 0 0 32px; background:#fff; -webkit-appearance:none}
+.service-callback-input input::-webkit-input-placeholder {opacity:1; color:#bfc3d3; font-weight:600; font-size:15px; letter-spacing:0.08em}
+.service-callback-input input::-moz-placeholder {opacity:1; color:#bfc3d3; font-weight:600; font-size:15px; letter-spacing:0.08em}
+.service-callback-input input:-ms-input-placeholder {opacity:1; color:#bfc3d3; font-weight:600; font-size:15px; letter-spacing:0.08em}
+.service-callback-input input:focus {border-color:#f46920}
+.service-callback-submit {position:absolute; width:281px; right:0; top:0}
+.service-callback-submit input {display:block; vertical-align:top; margin:0; padding:0; width:100%; overflow:visible; height:64px; outline:none; text-decoration:none; background:#f46920; color:#fff; border:none; border-radius:32px; font:600 15px/64px ProximaNova, sans-serif; letter-spacing:0.08em; text-transform:uppercase; text-align:center; position:relative; -webkit-appearance:none; cursor:pointer; transition:color 0.2s, background 0.2s; box-sizing:border-box}
+.service-callback-submit input:hover {color:#fff; background:#fe803d; text-decoration:none}
+
+@media screen and (max-width:1199px) {
+    .service-callback {margin:61px -8px 0 -8px; padding:40px 8px 182px 8px; background:#ebf0f2 url(../images/service-callback-mobile.jpg) no-repeat center bottom}
+    .service-callback::before {display:none}
+    .service-callback-container {float:none; width:auto}
+    .service-callback-title {font-size:28px; line-height:34px}
+    .service-callback-form {margin:24px 0 0 0}
+    .service-callback-input {width:auto}
+    .service-callback-input input {border-radius:32px}
+    .service-callback-submit {position:relative; width:auto; right:auto; top:auto; margin:16px 0 0 0}
+}
+
+.night-prefs {margin:76px 0 0 0; border-radius:16px; padding:54px 270px 0 48px; background:url(../images/night-prefs.jpg) no-repeat center; background-size:cover; position:relative}
+.night-prefs::before {content:""; display:block; position:absolute; left:0; top:0; right:0; bottom:0; background:linear-gradient(76.8deg, #43a3c9 5.29%, rgba(235, 240, 242, 0) 73.92%); border-radius:16px}
+.night-prefs-container {position:relative; color:#fff}
+.night-prefs-container h2 {margin:0}
+.night-prefs-container ol {margin:64px 0 0 0; padding:0 0 82px 0; max-width:370px; font-weight:600; letter-spacing:0.02em; position:relative}
+.night-prefs-container ol::before {content:""; display:block; position:absolute; left:24px; top:0; bottom:0; width:1px; background:rgba(255, 255, 255, 0.5)}
+.night-prefs-container ol li {margin:30px 0 0 0; padding:0 0 0 80px}
+.night-prefs-container ol li::before {border:none; top:-13px; background:#fff; width:48px; height:48px; color:#222426; font-size:22px; line-height:48px}
+.night-prefs-notice {position:absolute; right:43px; bottom:60px; display:table; width:188px; transform:rotate(-30deg)}
+.night-prefs-notice-text {display:table-cell; vertical-align:middle; text-align:center; height:188px; background:#222426; border-radius:188px; font-weight:600; font-size:24px; line-height:24px; color:#fff}
+
+@media screen and (max-width:1199px) {
+    .night-prefs {margin:0 -8px; border-radius:0; background:#45a4c9 url(../images/night-prefs-mobile.jpg) no-repeat center bottom; background-size:100% auto; padding:60px 8px 536px 8px}
+    .night-prefs::before {display:none}
+    .night-prefs-container ol {margin:36px 0 0 0; padding:0; max-width:none}
+    .night-prefs-container ol::before {left:20px; top:6px; bottom:20px}
+    .night-prefs-container ol li {margin:24px 0 0 0; padding:0 0 0 54px}
+    .night-prefs-container ol li:first-child {margin:0}
+    .night-prefs-container ol li::before {top:6px; width:40px; height:40px; font-size:18px; line-height:40px}
+    .night-prefs-notice {right:15px}
+}
+
+.night-pref-main {margin:103px 0 0 0; position:relative; padding:0 146px 0 353px; font-size:24px; line-height:34px; letter-spacing:0.01em}
+.night-pref-main::before {content:""; display:block; width:120px; height:120px; position:absolute; left:0; top:0; background:url(../images/night-pref-main.jpg) no-repeat center; border-radius:50%}
+.night-pref-main::after {content:""; display:block; position:absolute; left:289px; top:2px; bottom:10px; width:4px; background:#18c6cd}
+
+@media screen and (max-width:1199px) {
+    .night-pref-main {margin:44px 0 0 0; padding:0 8px 0 16px; font-size:18px; line-height:25px; letter-spacing:0}
+    .night-pref-main::before {display:none}
+    .night-pref-main::after {left:0; bottom:0}
+}
+
+.night-history {margin:127px 0 0 0}
+.night-history h2 {margin:0}
+.night-history p {margin:18px 0 35px 0}
+.night-history .main-history-item-timing {color:#828ba9}
+
+@media screen and (max-width:1199px) {
+    .night-history {margin:72px 0 0 0}
+    .night-history p {margin:16px 0 40px 0}
+}
+
+.night-test {margin:141px -999px 0 -999px; padding:86px 999px 0 999px; border-top:1px solid rgba(191, 195, 211, 0.64)}
+
+@media screen and (max-width:1199px) {
+    .night-test {margin:97px 0 0 0; padding:0; border-top:none}
+}
+
+.test-mobile-welcome {display:none}
+.test h2 {margin:0}
+.test-anonce {margin:18px 0 0 0}
+.test-questions {margin:35px 0 0 0}
+.test-question {margin:8px 0 0 0; border:1px solid #bfc3d3; border-radius:16px}
+.test-question-header {padding:13px 23px 13px 26px; border-radius:16px 16px 0 0}
+.test-question.open .test-question-header {background:#ebf0f2; border-bottom:1px solid rgba(0, 0, 0, 0.16)}
+.test-question-header::after {content:""; display:block; clear:both}
+.test-question-title {float:left; max-width:calc(100% - 200px); padding:10px 0; font-weight:600}
+.test-question-variants {float:right}
+.test-question-variant {float:left; margin:0 0 0 6px}
+.test-question-variant:first-child {margin:0}
+.test-question-variant a {display:block; padding:0 18px; height:44px; font-weight:600; line-height:44px; border-radius:22px}
+.test-question.open .test-question-variant a {color:#18c6cd; pointer-events:none}
+.test-question.open .test-question-variant.selected a {color:#fff; background:#18c6cd}
+.test-question.failed .test-question-variant.selected a {background:#e8765d}
+.test-question-answer {display:none; padding:34px 41px 38px 176px; position:relative}
+.test-question.open .test-question-answer {display:block}
+.test-question-answer::before {content:""; display:block; width:1px; position:absolute; left:94px; top:30px; bottom:0; background:#bfc3d3}
+.test-question-answer-icon {display:none; position:absolute; left:71px; top:30px}
+.test-question.open .test-question-answer-icon {display:block}
+.test-question.open .test-question-answer-icon.failed {display:none}
+.test-question.failed .test-question-answer-icon {display:none}
+.test-question.failed .test-question-answer-icon.failed {display:block}
+.test-question-answer-icon svg {display:block; width:48px; height:48px; fill:none}
+.test-question-answer-true {font-size:14px; line-height:20px; letter-spacing:0.205em; text-transform:uppercase; font-weight:600; color:#18c6cd}
+.test-question-answer-false {display:none; font-size:14px; line-height:20px; letter-spacing:0.205em; text-transform:uppercase; font-weight:600; color:#f46920}
+.test-question.failed .test-question-answer-true {display:none}
+.test-question.failed .test-question-answer-false {display:block}
+.test-question-answer-title {margin:8px 0 0 0; font-weight:600; font-size:22px; line-height:26px}
+.test-question-answer-text {margin:22px 0 0 0; color:#575d74}
+.test-question-answer-text *:first-child {margin-top:0}
+.test-question-answer-text *:last-child {margin-bottom:0}
+
+@media screen and (max-width:1199px) {
+    .test-mobile-welcome {display:block; position:relative}
+    .test-mobile-welcome::before {content:""; display:block; position:absolute; left:50%; top:50%; width:404px; height:404px; margin:-202px 0 0 -202px; background:#ebf0f2; border-radius:50%}
+    .test-mobile-welcome::after {content:"?"; display:block; position:absolute; right:5px; top:-47px; font-weight:600; font-size:240px; line-height:276px; color:#18c6cd}
+    .test-mobile-welcome-container {position:relative; padding:61px 0 67px 0; width:215px; margin:0 auto; z-index:1}
+    .test-mobile-welcome-title {font-weight:600; font-size:45px; line-height:52px; margin:0 0 0 7px}
+    .test-mobile-welcome-text {margin:15px 0 0 7px}
+    .test-mobile-welcome-link {margin:15px 0 0 0}
+    .test-mobile-welcome-link a {display:block; height:64px; border-radius:32px; text-align:center; color:#fff; text-decoration:none; background:#f46920; font-weight:600; font-size:15px; line-height:64px; letter-spacing:0.08em; text-transform:uppercase}
+    .test h2 {display:none}
+    .test-anonce {display:none}
+    .test-questions {display:none}
 }
 
 .doctors-header {margin:52px 0 0 0}

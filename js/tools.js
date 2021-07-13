@@ -528,9 +528,22 @@ $(document).ready(function() {
         }
         e.preventDefault();
     });
-    
+
     $('.video-filter-title a').click(function(e) {
         $('.video-filter').toggleClass('open');
+        e.preventDefault();
+    });
+
+    $('.test-question-variant a').click(function(e) {
+        var curVariant = $(this).parent();
+        var curQuestion = $(this).parents().filter('.test-question');
+        if (!curQuestion.hasClass('open')) {
+            curVariant.addClass('selected');
+            curQuestion.addClass('open');
+            if (!curVariant.hasClass('correct')) {
+                curQuestion.addClass('failed');
+            }
+        }
         e.preventDefault();
     });
 
@@ -550,6 +563,10 @@ $(window).on('load resize', function() {
         $('.contacts-menu').each(function() {
             $(this).mCustomScrollbar('destroy');
         });
+
+        $('.service-principle-list').each(function() {
+            $(this).mCustomScrollbar('destroy');
+        });
     } else {
         $('.main-ratings-list').each(function() {
             $(this).mCustomScrollbar({
@@ -564,6 +581,12 @@ $(window).on('load resize', function() {
         });
 
         $('.contacts-menu').each(function() {
+            $(this).mCustomScrollbar({
+                axis: 'x'
+            });
+        });
+
+        $('.service-principle-list').each(function() {
             $(this).mCustomScrollbar({
                 axis: 'x'
             });
@@ -715,6 +738,11 @@ function windowOpen(linkWindow, dataWindow) {
         var doctorID = getUrlVar(linkWindow)['doctorID'];
         if (typeof(doctorID) !== 'undefined') {
             $('.window .form-select input[value="' + doctorID + '"]').prop('checked', true).trigger('change');
+        }
+
+        var phone = $('.service-callback-input input').val();
+        if (typeof(phone) !== 'undefined' && phone !== '') {
+            $('.window .form-input input.phoneRU').val(phone).trigger('change').trigger('blur');
         }
 
         $(window).trigger('resize');
