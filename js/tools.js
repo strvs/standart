@@ -547,6 +547,69 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    $('.test-question').eq(0).addClass('active');
+
+    $('.test-mobile-welcome-link a').click(function(e) {
+        var curScroll = $(window).scrollTop();
+        $('html').addClass('test-mobile-open');
+        $('.wrapper').css({'top': -curScroll});
+        $('.wrapper').data('curScroll', curScroll);
+        e.preventDefault();
+    });
+
+    $('.test-mobile-close, .test-results-link-close a').click(function(e) {
+        $('html').removeClass('test-mobile-open');
+        $('.wrapper').css({'top': 'auto'});
+        $(window).scrollTop($('.wrapper').data('curScroll'));
+        e.preventDefault();
+    });
+
+    $('.test-question-mobile-next a').click(function(e) {
+        var curItem = $(this).parents().filter('.test-question');
+        curItem.removeClass('active');
+        curItem.next().addClass('active');
+        e.preventDefault();
+    });
+
+    $('.test-question-mobile-result-link a').click(function(e) {
+        $('.test').addClass('results');
+        var curTrue = $('.test-question').length - $('.test-question.failed').length;
+        var countAll = $('.test-question').length;
+        $('.test-results-status-current').html(curTrue);
+        $('.test-results-status-count').html(countAll);
+        var newPercent = curTrue / countAll * 100;
+        $('.test-results-title').each(function() {
+            var curTitle = $(this);
+            var curPercent = Number(curTitle.attr('data-percents'));
+            if (newPercent >= curPercent) {
+                $('.test-results-title.visible').removeClass('visible');
+                curTitle.addClass('visible');
+            }
+        });
+        e.preventDefault();
+    });
+
+    $('.test-results-link-record a').click(function(e) {
+        $('html').removeClass('test-mobile-open');
+        $('.wrapper').css({'top': 'auto'});
+        $(window).scrollTop($('.wrapper').data('curScroll'));
+        windowOpen($(this).attr('href'));
+        e.preventDefault();
+    });
+
+    $('.services-disease-header').click(function(e) {
+        $(this).parent().toggleClass('open');
+    });
+
+    $('body').on('click', '.faq-item-header', function(e) {
+        $(this).parent().toggleClass('open');
+    });
+
+    $('body').on('click', '.faq-item-text-more-link a', function(e) {
+        $(this).parent().toggleClass('open');
+        e.preventDefault();
+    });
+
 });
 
 $(window).on('load resize', function() {
@@ -595,6 +658,30 @@ $(window).on('load resize', function() {
 
     $('.submenu-mobile').remove();
     $('.nav ul li.open').removeClass('open');
+
+    $('.cataract-how-list').each(function() {
+        var curList = $(this);
+
+        curList.find('.cataract-how-item-inner').css({'min-height': '0px'});
+
+        curList.find('.cataract-how-item-inner').each(function() {
+            var curBlock = $(this);
+            var curHeight = curBlock.outerHeight();
+            var curTop = curBlock.offset().top;
+
+            curList.find('.cataract-how-item-inner').each(function() {
+                var otherBlock = $(this);
+                if (otherBlock.offset().top == curTop) {
+                    var newHeight = otherBlock.outerHeight();
+                    if (newHeight > curHeight) {
+                        curBlock.css({'min-height': newHeight + 'px'});
+                    } else {
+                        otherBlock.css({'min-height': curHeight + 'px'});
+                    }
+                }
+            });
+        });
+    });
 
 });
 
