@@ -1659,7 +1659,7 @@ p.text-anonce {font-size:24px; line-height:34px; margin:39px 0}
     .test-mobile-open .test-mobile-close {display:block}
     .test-mobile-close svg {display:block; width:14px; height:14px; fill:#222426; position:absolute; left:50%; top:50%; margin:-7px 0 0 -7px}
     .test-mobile-open .test-questions {display:block; margin:0; position:absolute; left:0; top:105px; right:0; bottom:0}
-    .test-mobile-open .test-question {position:absolute; left:-9999px; top:-9999; width:100%; height:calc(100% - 72px); overflow:auto}
+    .test-mobile-open .test-question {position:absolute; left:-9999px; top:-9999px; width:100%; height:calc(100% - 72px); overflow:auto}
     .test-mobile-open .test-question.active {left:0; top:0; margin:0; border:none}
     .test-question-header {padding:16px 72px 16px 8px; border-radius:0; border-bottom:1px solid rgba(191, 195, 211, 0.64)}
     .test-question.open .test-question-header {background:none; border-bottom:1px solid rgba(191, 195, 211, 0.64)}
@@ -1889,6 +1889,11 @@ p.text-anonce {font-size:24px; line-height:34px; margin:39px 0}
 .service-faq {margin:117px 0 0 0}
 .service-faq h2 {margin:0 0 53px 0}
 
+@media screen and (max-width:1199px) {
+    .service-faq {margin:64px 0 0 0}
+    .service-faq h2 {margin:0 0 16px 0}
+}
+
 .faq-list {margin:21px 0 0 0; column-count:2; column-gap:32px}
 .faq-item {margin:0 0 8px 0; border:1px solid #bfc3d3; border-radius:16px; position:relative; overflow:hidden; break-inside:avoid}
 .faq-item-header {display:block; cursor:pointer; position:relative; padding:23px 100px 23px 24px; transition:background 0.2s; border-radius:16px}
@@ -1914,8 +1919,21 @@ p.text-anonce {font-size:24px; line-height:34px; margin:39px 0}
 .faq-item-text-more {display:none; margin:12px 0 0 0}
 .faq-item-text-more-link.open+.faq-item-text-more {display:block}
 
+@media screen and (max-width:1199px) {
+    .faq-list {margin:16px 0 0 0; column-count:1; column-gap:0}
+    .faq-item {margin:0; border:none; border-bottom:1px solid #bfc3d3; border-radius:0}
+    .faq-item-header {margin:0 -8px; padding:20px 60px 20px 8px; border-radius:0}
+    .faq-item.open .faq-item-header {border-radius:0; border-bottom:none}
+    .faq-item-header > svg {width:32px; height:32px; right:8px; top:18px}
+    .faq-item-text {display:none; padding:24px 0; position:relative}
+    .faq-item-video a {width:100%}
+    .faq-item-video a span {padding-top:120px}
+    .faq-item-video a::before {top:60px}
+    .faq-item-video a::after {top:32px}
+}
+
 .laser-diseases {margin:40px -16px 0 -16px; font-size:0; line-height:0; letter-spacing:-1px; white-space:nowrap}
-.laser-disease {display:inline-block; vertical-align:top; width:25%; padding:0 16px}
+.laser-disease {display:inline-block; vertical-align:top; width:25%; padding:0 16px; white-space:normal}
 .laser-disease a {display:block}
 .laser-disease-preview {height:249px; position:relative; background:#ebf0f2; border-radius:16px; padding:16px 20px 0 20px; overflow:hidden}
 .laser-disease-preview img {display:block; position:absolute; left:0; bottom:0; width:100%}
@@ -1924,6 +1942,85 @@ p.text-anonce {font-size:24px; line-height:34px; margin:39px 0}
 .laser-disease-subtitle {margin:5px 0 0 0; font-size:15px; line-height:18px; letter-spacing:0.01em; color:#828ba9}
 .laser-disease-btn {margin:20px 0 0 0; height:65px; font-size:15px; line-height:62px; letter-spacing:0.08em; color:#222426; text-align:center; border:1px solid #222426; border-radius:32px; transition:color 0.2s, border-color 0.2s; text-transform:uppercase; font-weight:600}
 .laser-disease-btn:hover {color:#18c6cd; border-color:#12b3ba}
+
+@media screen and (max-width:1199px) {
+    .laser-diseases {margin:32px -8px 0 -8px; overflow:auto}
+    .laser-disease {width:197px; margin:0 8px; padding:0}
+    .laser-disease-preview {height:190px; padding:16px 12px 0 12px}
+    .laser-disease-title {font-size:20px; line-height:24px}
+    .laser-disease-subtitle {margin:7px 0 0 0}
+    .laser-disease-btn {margin:16px 0 0 0; height:48px; line-height:46px}
+    .laser-diseases .mCSB_horizontal.mCSB_inside > .mCSB_container {margin:0}
+    .laser-diseases .mCSB_scrollTools.mCSB_scrollTools_horizontal {opacity:0 !important}
+}
+
+
+.laser-prefs {margin:109px 0 0 0; background:#ebf0f2; border-radius:16px; padding:56px 48px 0 48px}
+.laser-prefs h2 {margin:0}
+.laser-prefs-container {margin:13px 0 0 0}
+.laser-prefs-container::after {content:""; display:block; clear:both}
+.laser-prefs-descr {float:left; margin:3px 0 0 0; width:360px}
+.laser-prefs-text {font-size:24px; line-height:34px; letter-spacing:0.01em}
+.laser-prefs-descr ol {margin:43px 0 0 0; padding:0 0 72px 0; position:relative}
+.laser-prefs-descr ol::before {content:""; display:block; position:absolute; left:24px; top:0; bottom:0; width:1px; background:rgba(191, 195, 211, 0.64)}
+.laser-prefs-descr ol li {margin:24px 0 0 0; padding:0 0 0 80px}
+.laser-prefs-descr ol li:first-child {margin:0}
+.laser-prefs-descr ol li::before {width:48px; height:48px; font-size:22px; line-height:46px; top:-11px}
+.laser-prefs-photo {float:right; width:498px; line-height:0; margin:0 27px 0 0}
+.laser-prefs-photo img {mix-blend-mode:multiply}
+
+@media screen and (max-width:1199px) {
+    .laser-prefs {margin:64px -8px 0 -8px; border-radius:0; padding:40px 8px}
+    .laser-prefs-container {margin:12px 0 0 0}
+    .laser-prefs-descr {float:none; margin:0; width:auto}
+    .laser-prefs-text {font-size:18px; line-height:25px; letter-spacing:0; color:#828ba9}
+    .laser-prefs-descr ol {margin:40px 0 0 0; padding:0}
+    .laser-prefs-descr ol::before {bottom:25px}
+    .laser-prefs-descr ol li {padding:0 0 0 70px}
+    .laser-prefs-descr ol li::before {top:50%; margin-top:-24px}
+    .laser-prefs-photo {float:none; width:auto; margin:40px 16px 0 16px}
+}
+
+.laser-uniq {margin:62px 0 0 0}
+
+.laser-compare {margin:55px -32px 0 -32px}
+.laser-compare-inner {display:table; width:100%; border-collapse:separate; border-spacing:32px 0}
+.laser-compare-item {display:table-cell; vertical-align:top; border:1px solid #bfc3d3; border-radius:16px; padding:16px 48px 26px 48px}
+.laser-compare-item-photo {line-height:0; height:168px; line-height:168px}
+.laser-compare-item-photo img {vertical-align:middle; display:inline-block; max-height:100%}
+.laser-compare-item-title {font-weight:600; margin:27px 0 0 0; font-size:22px; line-height:26px}
+.laser-compare-item-text {margin:10px 0 0 0}
+
+@media screen and (max-width:1199px) {
+    .laser-compare {margin:32px -16px 0 -16px; overflow:auto; position:relative}
+    .laser-compare-inner {width:442px; border-spacing:16px 0}
+    .laser-compare-item {padding:29px 24px 28px 13px}
+    .laser-compare-item-photo {height:80px; line-height:80px}
+    .laser-compare-item-title {margin:28px 0 0 0; font-size:20px; line-height:24px}
+    .laser-compare-item-text {margin:12px 0 0 0}
+    .laser-compare .mCSB_horizontal.mCSB_inside > .mCSB_container {margin:0}
+    .laser-compare .mCSB_scrollTools.mCSB_scrollTools_horizontal {opacity:0 !important}
+}
+
+.laser-stable {margin:37px 0 0 0; padding:24px; background:#ebf0f2; border-radius:16px; text-align:center; font-size:24px; line-height:34px; letter-spacing:0.01em}
+
+@media screen and (max-width:1199px) {
+    .laser-stable {margin:40px 0 0 0; padding:24px 16px; text-align:left; font-size:18px; line-height:25px; letter-spacing:0}
+}
+
+.laser-age {margin:96px 0 0 0; position:relative}
+.laser-age::before {content:""; display:block; position:absolute; left:288px; top:2px; bottom:4px; width:4px; border-radius:2px; background:#18c6cd}
+.laser-age::after {content:""; display:block; clear:both}
+.laser-age-value {float:left; margin:0 0 0 159px; font-size:64px; line-height:70px; font-weight:600; color:#18c6cd}
+.laser-age-text {margin:0 179px 0 320px; font-size:24px; line-height:34px; letter-spacing:0.01em}
+
+@media screen and (max-width:1199px) {
+    .laser-age {margin:40px 0 0 0}
+    .laser-age::before {display:none}
+    .laser-age-value {float:none; margin:0}
+    .laser-age-value::after {content:""; display:block; width:96px; height:4px; border-radius:2px; background:#18c6cd}
+    .laser-age-text {margin:16px 0 0 0; font-size:18px; line-height:25px; letter-spacing:0}
+}
 
 .doctors-header {margin:52px 0 0 0}
 .doctors-header::after {content:""; display:block; clear:both}

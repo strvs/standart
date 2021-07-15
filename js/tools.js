@@ -630,6 +630,14 @@ $(window).on('load resize', function() {
         $('.service-principle-list').each(function() {
             $(this).mCustomScrollbar('destroy');
         });
+
+        $('.laser-diseases').each(function() {
+            $(this).mCustomScrollbar('destroy');
+        });
+
+        $('.laser-compare').each(function() {
+            $(this).mCustomScrollbar('destroy');
+        });
     } else {
         $('.main-ratings-list').each(function() {
             $(this).mCustomScrollbar({
@@ -650,6 +658,18 @@ $(window).on('load resize', function() {
         });
 
         $('.service-principle-list').each(function() {
+            $(this).mCustomScrollbar({
+                axis: 'x'
+            });
+        });
+
+        $('.laser-diseases').each(function() {
+            $(this).mCustomScrollbar({
+                axis: 'x'
+            });
+        });
+
+        $('.laser-compare').each(function() {
             $(this).mCustomScrollbar({
                 axis: 'x'
             });
