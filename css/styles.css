@@ -340,8 +340,12 @@ header {position:relative; background:#12b3ba; color:#fff}
 
 .header-simple {border-left:1px solid #c4c4c4; position:relative}
 
+@media screen and (max-width:1599px) {
+    .header-simple {margin-left:calc((1120px - 100vw) / 2 + 295px)}
+}
+
 @media screen and (max-width:1199px) {
-    .header-simple {border-left:none}
+    .header-simple {border-left:none; margin-left:0}
 }
 
 .header-back-link {padding:0 0 0 48px; margin:0 -999px 0 0; border-bottom:1px solid #c4c4c4; height:50px; line-height:49px}
@@ -409,8 +413,12 @@ header {position:relative; background:#12b3ba; color:#fff}
 .header-back-link .header-photo-menu ul li.active::after {display:none}
 .header-back-link .header-photo-menu ul li a span {height:49px}
 
+@media screen and (max-width:1599px) {
+    .header-photo {margin-left:calc((1120px - 100vw) / 2 + 295px)}
+}
+
 @media screen and (max-width:1199px) {
-    .header-photo {border-left:none}
+    .header-photo {border-left:none; margin-left:0}
     .header-photo-menu {display:none}
     .header-photo-content-inner {height:336px; padding:17px 0}
     .header-photo-content-inner h1 {margin:0}
@@ -445,7 +453,7 @@ header {position:relative; background:#12b3ba; color:#fff}
 .main-slider-status {position:absolute; bottom:92px; right:calc((100vw - 1120px) / 2 + 102px); font-weight:600; font-size:22px; line-height:40px}
 
 @media screen and (max-width:1599px) {
-    .main-slider {left:256px}
+    .main-slider {left:295px; margin-left:calc((1120px - 100vw) / 2)}
     .main-slider-item-inner {height:640px}
     .main-slider-item-content {left:32px; bottom:61px; right:349px}
     .main-slider-item-title {max-width:520px}
@@ -488,7 +496,7 @@ header {position:relative; background:#12b3ba; color:#fff}
 .main-video-icon span {display:block; position:absolute; left:50%; top:100%; margin-top:18px; white-space:nowrap; transform:translateX(-50%); color:#fff; font-size:15px; line-height:18px; letter-spacing:0.08em; text-transform:uppercase}
 
 @media screen and (max-width:1599px) {
-    .main-video {left:-40px; width:295px}
+    .main-video {left:calc((1120px - 100vw) / 2); width:295px}
     .main-video-open .main-video {width:1137px}
     .main-video-inner {width:1237px}
     .main-video-inner iframe {width:1137px; height:640px}
