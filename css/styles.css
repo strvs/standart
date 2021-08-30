@@ -2482,9 +2482,6 @@ p.text-anonce {font-size:24px; line-height:34px; margin:39px 0}
 .price-item-header-count.visible {display:block}
 .price-item-header svg {display:block; width:40px; height:40px; fill:none; position:absolute; right:24px; top:22px}
 .price-item-container {display:none; padding:0 32px 50px 24px}
-.price-item-group {margin:48px 0 0 0}
-.price-item-group.hidden {display:none}
-.price-item-group h3 {margin:0 0 -8px 0}
 .price-item-position {margin:32px 0 0 40px}
 .price-item-position.hidden {display:none}
 .price-item-position::after {content:""; display:block; clear:both}
@@ -2496,7 +2493,6 @@ p.text-anonce {font-size:24px; line-height:34px; margin:39px 0}
 
 @media screen and (min-width:1200px) {
     .price-item.open .price-item-header {background:#ebf0f2; border-radius:16px 16px 0 0}
-    .price-item.open .price-item-header-title {font-size:36px; line-height:36px}
     .price-item.open .price-item-header svg {transform:rotate(-180deg)}
     .price-item.open .price-item-container {display:block}
 }
@@ -2521,7 +2517,6 @@ p.text-anonce {font-size:24px; line-height:34px; margin:39px 0}
     .price-item-container {padding:0 8px 40px 8px}
     .price-item.open .price-item-container {display:block}
 
-    .price-item-group h3 {margin:40px 0 0 0}
     .price-item-position {margin:32px 0 0 0}
     .price-item-position-text {float:none; width:auto}
     .price-item-position-cost {max-width:none; margin:-22px 0 0 0}

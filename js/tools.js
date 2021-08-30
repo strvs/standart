@@ -425,7 +425,6 @@ $(document).ready(function() {
                 $(this).html($(this).html().replace(/<span>/g, '').replace(/<\/span>/g, ''));
             });
             $('.price-item-position').removeClass('hidden');
-            $('.price-item-group').removeClass('hidden');
             if (curValue != '') {
                 $('.price-item').each(function() {
                     var curItem = $(this);
@@ -442,10 +441,6 @@ $(document).ready(function() {
                         } else {
                             var curPosition = $(this).parents().filter('.price-item-position');
                             curPosition.addClass('hidden');
-                            var curGroup = curPosition.parents().filter('.price-item-group');
-                            if (curGroup.find('.price-item-position').length == curGroup.find('.price-item-position.hidden').length) {
-                                curGroup.addClass('hidden');
-                            }
                         }
                     });
                     if (!result) {
